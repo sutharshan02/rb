@@ -1,0 +1,99 @@
+.work-history-section{
+    .work-history-box-border{
+        padding-bottom:30px;
+        border-bottom:1px solid $nav-color;
+    }
+    .work-history-complete{
+        background-color :  $gary-8;
+        width            : 100%;
+        border           :1px solid $nav-color;
+        border-radius    :3px;
+
+        .left{
+            width            : 5%;
+            background-color :$gary-9;
+            border-right     :1px solid $nav-color;
+            img{
+                margin: 0 auto;
+            }
+        }
+        .mid{
+            padding :20px 30px;
+            width   : 90%;	
+            h4{
+                font-weight : $bold  ;
+                font-size   : 16px;
+                color       : $black;
+                padding     : 0;
+                margin      : 0;
+                span{
+                    font-weight : $light  ;
+                    font-size   : 13px;
+                    color       : $black;
+                    padding     : 0;
+                    margin      : 0;
+                }
+            }
+            p{
+                font-weight : $semi-bold  ;
+                font-size   : 13px;
+                color       : $gary-4;
+                padding     : 0;
+                margin      : 0;
+                text-transform: uppercase;
+            }
+        }
+
+        .right{
+            width: 5%;
+        }
+
+        .common{
+            float: left;
+
+            img{
+                padding: 30px 0;
+            }
+        }
+    }
+
+
+}
+.form-section{
+    .work-date{
+        border        : 1px solid $gary-3 ;
+        background    : transparent;
+        border-radius :3px;
+        padding       :5px;
+
+        select{
+            border              : none;
+            padding             :0;
+            height              : 30px;
+            background-position : 90% center;
+            outline: none;
+
+        }
+
+        .boder-select{
+            border-right : 1px solid $gary-3 ;	
+        }
+    }
+
+
+}
+
+.working-box{
+    text-transform : capitalize !important;
+    margin         : 0 !important;
+    display        : block;
+    color          : $black !important;
+}
+
+/*       
+        $thin      : 100;    
+        $light     :300;       
+        $regular   :400;       
+        $semi-bold : 500;        
+        $bold      : 700;
+*/

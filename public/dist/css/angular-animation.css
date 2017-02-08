@@ -1,0 +1,129 @@
+
+.ngview , .ngview *{
+  transition: all 300ms ease-in-out;
+}
+
+.ngview , .ngview a {
+  transition: none;
+}
+
+.ngview , .ngview .ng-include *{
+  transition: none;
+}
+/*
+
+.ngview ng-include, .ngview ng-include *{
+  transition: none;
+}
+ .ngview.ng-enter .rb-inner-wrapper{
+  opacity: 0;
+  transition-delay: 50ms;
+  transform: scale(1.1);
+
+}
+
+ .ngview.ng-enter-active .rb-inner-wrapper {
+  opacity: 1;
+  transform: scale(1);
+
+}
+
+ .ngview.ng-leave .rb-inner-wrapper{
+  opacity: 1;
+ transform: scale(1);
+}
+
+ .ngview.ng-leave-active .rb-inner-wrapper{
+  opacity: 0;
+ transform: scale(.9);
+}
+
+*/
+.work-item {
+  opacity: 1;
+  transition: all 1000ms ease-in-out;
+  transform-origin: top left;
+}
+
+.work-item.ng-leave {
+  opacity: 1;
+  /*transform: scaleY(1);*/
+}
+
+
+/*
+.work-item.ng-leave-active {
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+
+.work-item.ng-enter {
+  opacity: 0;
+
+}
+
+.work-item.ng-enter-active {
+  opacity: 1;
+
+}
+/**/
+.loading-spinner {
+
+  background: transparent;
+  padding-top: 200px;
+    height: 800px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 100;
+    pointer-events: none;
+}
+
+
+#myModal, #myModal > div {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms ease-in-out;
+
+}
+
+
+#myModal.ng-enter {
+ opacity: 0;
+ transform: scale(2);
+}
+#myModal.ng-enter-active {
+ opacity: 1;
+ transform: scale(1);
+}
+
+#myModal.ng-leave > div{
+  transform: scale(1);
+ opacity: 1;
+}
+
+
+
+#myModal.ng-leave-active > div{
+ opacity: 0;
+ transform: scale(0);
+}
+
+div#myModal:after {
+    background: #222;
+    width: 5000px;
+    height: 800px;
+    content: "asfdsfda";
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    opacity: .5;
+    z-index: 20;
+}
+
+div#myModal >div {
+    z-index: 21;
+}
+
+/**/

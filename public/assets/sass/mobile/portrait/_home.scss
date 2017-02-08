@@ -1,0 +1,484 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 8 1, 2016, 12:11:15 PM
+    Author     : Timal-Tharinda
+*/
+
+
+
+.home-banner-section{
+    background-image    :none !important;
+    background:$gary-21;
+    background-repeat   : no-repeat;
+    background-size     : auto 100%;
+    min-height          :10px;
+    background-position : right bottom;
+    background-size     : cover;
+    padding             : 8% 0 1%;
+
+    h1{
+        font-weight : $thin  ;
+        font-size   : 30px;
+        color       : $white;
+        padding     : 0;
+        margin      : 0;
+        text-align: center;
+
+    }
+    h2{
+        font-weight : $thin  ;
+        font-size   : 20px;
+        color       : $gary-4;
+        padding     : 0;
+        margin      : 0px 0 54px;
+        text-align: center;
+    }
+    p{
+        font-weight : $light  ;
+        font-size   : 18px;
+        color       : $white;
+        padding     : 0;
+        margin      : 0;
+        padding     : 5px 0;
+        text-align: center;
+        b{
+            font-weight    : $bold  ;
+        }
+    }
+    a{
+        color             : $white ;
+        border            :none;
+        border-radius     :3px;
+        padding           : 11px 19px;
+        background-image  : url(../images/next-button.png);
+        background-repeat : repeat-x;
+        background-size   : auto 100%;
+        text-transform    : uppercase;
+        margin            : 62px 0 0;
+        display           : inline-block;
+            font-size: 12px;
+    }
+
+    .left{
+        width: 100%;
+    }
+
+    .mid{
+        width        : 100%;
+        border-left  : none;
+        border-right : none;
+    }
+
+    .right{
+        width: 100%;
+    }
+
+    .home-banner-row{
+        margin: 0;
+    }
+}
+
+.home-section-1{
+    padding:0 0 10px;
+    h2{
+        font-weight : $thin  ;
+        font-size   : 38px;
+        color       : $black ;
+        padding     : 0;
+        margin      : 15px 0 38px;
+        padding     : 5px 0;
+        text-align  :center;
+    }
+
+    h5{
+        font-weight : $thin  ;
+        font-size   : 28px;
+        color       : $black ;
+        padding     : 0;
+        margin      : 0;
+        padding     : 5px 0;
+        text-align  :center;
+    }
+
+    p{
+        font-weight : $light  ;
+        font-size   : 18px;
+        color       : $gary-11 ;
+        padding     : 0;
+        margin      : 0;
+        padding     : 5px 0 20px;
+        text-align  :center;
+    }
+    img{
+        display : block;
+        margin  : 0 auto;
+    }
+
+    .mid{
+        border-left  : 1px solid $gary-16;
+        border-right : 1px solid $gary-16; 
+    }
+}
+
+.home-section-2{
+
+    background-image      : none;
+    background-repeat     : no-repeat;
+    background-size       : 100%;
+    min-height            : 375px;
+    background-position   : bottom ;
+    padding               : 10px 0;   
+    background-attachment : fixed;
+
+    h3{
+        font-weight : $bold  ;
+        font-size   : 22px;
+        color       : $black ;
+        padding     : 0;
+        margin      : 0;
+        padding     : 0px 0px 27px;
+    }
+
+    p{
+        font-weight : $light  ;
+        font-size   : 16px;
+        color       : $gary-14 ;
+        padding     : 0;
+        margin      : 0;
+        padding     : 0px 0px;
+    }
+
+    a{
+        font-weight    : $bold  ;
+        font-size      : 12px;
+        color          : $blue-2 ;
+        padding        : 0;
+        margin         : 17px 0 0;
+        padding        : 0px 0px;
+        text-transform : uppercase;
+        display        : inline-block;
+
+        &:hover{
+            color       : $orange ; 
+        }
+    }
+
+
+    .img-box{
+        width          : 5%;
+        padding-bottom :20px;
+
+        .img-responsive {
+            max-width   : none;
+            padding-top :5px;
+        }
+    }
+
+    .content-box{
+        width          : 70%;
+        padding-bottom :10px;
+    }
+    .left{
+        margin-left:15px;
+        margin-bottom:15px;
+    }
+
+    .right{
+        margin-left:15px;
+    }
+
+    .home-section-2-row{
+        margin: 15px;
+    }
+}
+
+.home-section-3{
+    background : $black-1;
+    padding: 60px 0;
+
+     .home-section-3-row{
+        margin: 15px;
+    }
+
+    h3{
+        font-weight : $bold  ;
+        font-size   : 22px;
+        color       : $white ;
+        padding     : 0;
+        margin      : 0;
+        padding     : 0px 0px 27px;
+    }
+
+    p{
+        font-weight : $light  ;
+        font-size   : 16px;
+        color       : $gary-4  ;
+        padding     : 0;
+        margin      : 0;
+        padding     : 0px 0px;
+    }
+
+    a{
+        font-weight    : $bold  ;
+        font-size      : 12px;
+        color          : $blue-2 ;
+        padding        : 0;
+        margin         : 17px 0 17px;
+        padding        : 0px 0px;
+        text-transform : uppercase;
+        display        : inline-block;
+
+        &:hover{
+            color       : $orange ; 
+        }
+
+
+    }
+
+
+    .img-box{
+        width          : 5%;
+        padding-bottom :20px;
+
+        .img-responsive {
+            max-width   : none;
+            padding-top :5px;
+        }
+    }
+
+    .content-box{
+        width          : 88%;
+        padding-bottom :10px;
+    } 
+    // .mid{
+    //      padding-left  : 30px;
+    //      padding-right : 30px; 
+    // }
+    .row_mid{
+        padding-left : 30px;
+        border-left  : 1px solid $gary-20 ;
+        
+    }
+
+    .left{
+                padding-left: 30px;    
+        }
+}
+.home-section-4{
+    display: none;
+
+    h2{
+        font-weight : $bold  ;
+        font-size   : 22px;
+        color       : $black;
+        padding     : 30px 0;
+        margin      : 0; 
+    }
+    .right{
+        img{
+            display        : inline-block;
+            vertical-align : top;
+            margin-right: 12%;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.home-page-signup-plans-wrapper{
+    .left{
+        margin-top: 19px;
+    }
+
+    .right{
+        margin-top: 19px;
+    }
+
+
+    .mid{
+
+
+        .signup-plan-box{
+
+            .top{
+                h3{
+                    padding: 51px 0 57px;
+                }
+            }
+
+        }
+
+    }
+
+    .get-started-button{
+        color             : $white ;
+        border            :none;
+        border-radius     :3px;
+        padding           : 11px 19px;
+        background-image  : url(../images/next-button.png);
+        background-repeat : repeat-x;
+        background-size   : auto 100%;
+        text-transform    : uppercase;
+        margin            : 20px 40px 40px;
+        display           : block;
+        text-align        : center;
+
+        &:hover{
+            color       : $orange ;  
+        }
+    }
+}
+.home-page-footer{
+    background-image      : url(../images/home-page-footer.png);
+    background-repeat     : no-repeat;
+    background-size       : cover;
+    min-height            : 375px;
+    background-position   : top center ;
+    padding               : 75px 0 0; 
+
+    .home-footer-container{
+        border-bottom:1px solid $gary-17;
+        padding-bottom:80px;
+        h1{
+            font-weight : $thin  ;
+            font-size   : 38px;
+            color       : $white;
+            margin      : 0 0 15px;
+            padding     : 0px 0px;
+            text-align  : center;
+        }
+
+        p{
+            font-weight : $thin  ;
+            font-size   : 28px;
+            color       : $gary-4 ;
+            margin      : 0 0 67px;
+            padding     : 0px 0px;
+            text-align  : center;
+        }
+
+        label{
+            font-weight : $light  ;
+            font-size   : 14px;
+            color       : $orange ;
+            margin      : 0;
+            padding     : 10px 0px 7px;
+            display     : block;
+        }
+
+
+        input[type ="text"]{
+            color       : $white;
+            font-weight : $light  ;
+            font-size   : 16px;
+            border      :1px solid $gary-18 ;
+        }
+
+        input[type ="email"]{
+            color       : $white;
+            font-weight : $light  ;
+            font-size   : 16px;
+            border      :1px solid $gary-18 ;
+        }
+
+
+        /*placeholder*/
+
+        input[type="text"]::-webkit-input-placeholder {
+            font-weight : $light  ;
+            color       : $gary-19 ;
+
+        }
+
+        input[type="text"]:-moz-placeholder { /* Firefox 18- */
+            font-weight : $light  ;
+            color       : $gary-19 ;
+
+        }
+
+        input[type="text"]::-moz-placeholder {  /* Firefox 19+ */
+            font-weight : $light  ;
+            color       : $gary-19 ;
+
+        }
+
+        input[type="text"]:-ms-input-placeholder {  
+            font-weight : $light  ;
+            color       : $gary-19;
+
+        }
+        /*placeholder*/
+
+        input[type="email"]::-webkit-input-placeholder {
+
+            font-weight : $light  ;
+            color       : $gary-19 ;
+
+        }
+
+        input[type="email"]:-moz-placeholder { /* Firefox 18- */
+            font-weight : $light  ;
+            color       : $gary-19 ;
+
+        }
+
+        input[type="email"]::-moz-placeholder {  /* Firefox 19+ */
+            font-weight : $light  ;
+            color       : $gary-19 ;
+
+        }
+
+        input[type="email"]:-ms-input-placeholder {  
+            font-weight : $light  ;
+            color       : $gary-19 ;
+
+        }
+
+        button{
+            color             : $white ;
+            border            :none;
+            border-radius     :3px;
+            padding           : 9px 19px;
+            background-image  : url(../images/next-button.png);
+            background-repeat : repeat-x;
+            background-size   : auto 100%;
+            text-transform    : uppercase;
+            margin            : 0;
+            display           : block;
+            text-align        : center;
+            width             : 100%;
+        }
+    }
+
+    .home-footer-row{
+        margin-left  :0px;
+        margin-right :0px;
+
+    }
+
+    .inner-footer {
+        background: transparent;
+
+
+    }     
+}
+
+/*       
+        $thin      : 100;    
+        $light     :300;       
+        $regular   :400;       
+        $semi-bold : 500;        
+        $bold      : 700;
+
+        font-weight : $light  ;
+        font-size   : 18px;
+        color       : $white;
+        margin      : 0;
+        padding     : 0px 0px;
+*/
+

@@ -1,0 +1,117 @@
+<style>
+input.download_inputs {
+  display: none;
+}
+
+</style>
+<section class="cvs">
+
+  <!-- <div class="cv-item" >
+    <button class="next-button" ng-click="create()">create new</button>
+  
+  </div> -->
+<div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row rb-inner-wrapper">
+          <div class="col-sm-9">
+
+            <h1> Select template to create your CV </h1>
+            selected template : {{selected_template}}
+          </div>
+
+          <div class="col-sm-3 form-section ">
+              <a class="next-button" href="" ng-click="gotoSave()">Continue</a>
+          </div>
+        </div>
+        <ul class="cv-list" >
+
+          <!-- <li ng-repeat="template in templates" ng-click="start(template.id)"> -->
+          <any  ng-repeat="template in templates">
+              <label>
+              <input type="radio" ng-model="selected_template.id" ng-value="$index + 1" name="template"/>
+            <li>
+              <p class="text-center">{{template.name}}</p>
+              <img ng-src="../assets/images/templates/{{template.id}}.jpg" />
+          </li>
+            </label>
+          </any>
+      <!--     <li ng-click="start(2)"><img src="../assets/images/templates/2.jpg" /></li>
+          <li ng-click="start(3)"><img src="../assets/images/templates/3.jpg" /></li> -->
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</section>
+
+<section ng-show="loadingError" style="min-height: 80vh;padding:50px;">
+
+  <div class="server-error">Internal Server error, please refresh and try again.. <br/>
+    If this error persists, please contact the site administrator.. </div>
+  </section>
+
+  <style>
+  .cv-item {
+    border: 1px solid #e1e1e1;
+    width: 200px;
+    margin: 10px;
+    /*float: left;*/
+    /*display: inline-block;*/
+  }
+
+  .cvs {
+    display: block;
+
+  }
+
+  .cv-list li img {
+    max-height: 200px;
+    transition: all 200ms ease-in-out;
+  }
+
+  .cv-list li {
+    float: left;
+    padding: 20px;
+    margin:5px 10px;
+    border: 1px dashed #888;
+    cursor: pointer;
+    background: #eee;
+  }
+   .cv-list li:hover {
+    background: #aaa;
+
+   }
+   .cv-list li:hover img {
+    /*background: #aaa;*/
+    box-shadow: 0px 11px 18px #444;
+    transform: translateY(-10px) translateX(-5px);
+   }
+
+   .cv-list li:hover p {
+    /*background: #aaa;*/
+    /*box-shadow: 0px 11px 18px #444;*/
+    text-shadow: 0px 11px 5px #444;
+    transform: translateY(-10px) translateX(-5px);
+   }
+
+
+   input[type="radio"] {
+    display: none;
+  }
+
+
+  .cv-list li {
+      border-width: 3px !important;
+  }
+
+  input[type="radio"]:checked ~ li
+   {
+      border: 3px solid #444 !important;
+  }
+
+  </style>

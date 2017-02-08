@@ -1,0 +1,123 @@
+
+        <link rel="stylesheet" href="{{imgPath}}/dist/css/owl.carousel.css">
+        <link rel="stylesheet" href="{{imgPath}}/dist/css/animate.css">
+        <link rel="stylesheet" href="{{imgPath}}/dist/css/style.css">
+        <link rel="stylesheet" href="{{imgPath}}/dist/css/res.css">
+
+
+<style>
+.singleItem {
+/*     border: 1px solid red; */
+    height: 720px;
+    overflow-y: hidden;
+}
+
+</style>
+<div class="bluebackground">
+    <div class="container">
+        <div class="row rb-inner-wrapper">
+
+         <div class="col-sm-3 form-section ">
+              <a class="next-button" href="" ng-click="gotoSave()">Continue</a>
+          </div>
+        </div>
+    </div>
+    <div class="container">
+        <!--Left main images list with data-id-->
+        <div class="col-md-6">
+            <div class="darkback">
+                <span class="close">x</span>
+            </div>
+
+            <div class="itemsListS">
+                <any  ng-repeat="template in templates">
+                    <div class="singleItem" ng-class="{'active': $index == 0}"  data-id="id{{template.id}}">
+                        <img 
+                        ng-src="../assets/images/templates/{{template.id}}.jpg" 
+                        />
+                    </div>
+                </any>
+
+            </div>
+        </div><!--End Left main images list-->
+
+
+
+
+
+        <!--Right slder images & items with id-->
+        <!--This id should be upper section data-id-->
+        <div class="col-md-6">
+
+            <div class="row">
+                <div class="sliderBox">
+                    <div owl 
+                    data-options="{
+                    loop: true,
+                    responsiveClass: true,
+                    nav: true,
+                    navText: false,
+                    animateOut: 'fadeOut',
+                    items: 1,
+                    singleItem: true,
+                    touchDrag: false,
+                    mouseDrag: false
+                }"
+
+                class="owl-carousel2">
+                <!--Slider item start-->
+                <div> 
+                    <any  ng-repeat="template in templates">
+                        <div 
+                        class="owl-itemIn" 
+                        ng-class="{'active': $index == template_id - 1}"
+                        id="id{{template.id}}"
+                        ng-click="select(template.id);">
+
+
+                        <img ng-src="../assets/images/templates/{{template.id}}.jpg" />
+                        <!-- <img ng-src="{{imgPath}}/dist/img/s{{template.id}}.jpg" /> -->
+                    </div>
+                </any>
+
+            </div> <!--End Slider item-->
+            <!--Slider item start-->
+            <div> 
+                <div class="owl-itemIn" id="id10">
+                    <img ng-src="{{imgPath}}/dist/img/s9.jpg" />
+                </div>
+                <div class="owl-itemIn" id="id11">
+                    <img ng-src="{{imgPath}}/dist/img/s8.jpg" />
+                </div>
+                <div class="owl-itemIn" id="id12">
+                    <img ng-src="{{imgPath}}/dist/img/s7.jpg" />
+                </div>
+                <div class="owl-itemIn" id="id13">
+                    <img ng-src="{{imgPath}}/dist/img/s6.jpg" />
+                </div>
+                <div class="owl-itemIn" id="id14">
+                    <img ng-src="{{imgPath}}/dist/img/s5.jpg" />
+                </div>
+                <div class="owl-itemIn" id="id15">
+                    <img ng-src="{{imgPath}}/dist/img/s4.jpg" />
+                </div>
+                <div class="owl-itemIn" id="id16">
+                    <img ng-src="{{imgPath}}/dist/img/s3.jpg" />
+                </div>
+                <div class="owl-itemIn" id="id17">
+                    <img ng-src="{{imgPath}}/dist/img/s2.jpg" />
+                </div>
+                <div class="owl-itemIn" id="id18">
+                    <img ng-src="{{imgPath}}/dist/img/s1.jpg" />
+                </div>
+            </div><!--End Slider item-->
+        </div>
+    </div>
+</div>
+
+        </div><!--End Left main images list-->
+    </div>
+</div>
+
+
+

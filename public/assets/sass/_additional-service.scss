@@ -1,0 +1,122 @@
+.additional-services-wrapper{
+    background     :$gary-10 ;
+    padding-top    :40px;
+    padding-bottom :40px;
+
+    h1{
+        font-weight : $light;
+        font-size   : 30px;
+        color       : $black;
+        padding     : 0;
+        margin      :0 0 8px;
+        text-align  : center;
+    }
+
+    p{
+        font-weight : $light;
+        font-size   : 18px;
+        color       : $gary-11;
+        padding     : 0;
+        margin      : 0;
+        text-align  : center;
+    }
+
+    .additional-services-box{
+        border        :2px solid $gary-12;
+        border-radius :3px;
+        padding       :40px 30px;
+        background    :$white;
+
+        &:hover{
+            border:2px solid $orange ;
+        }
+
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+        h3{
+            font-weight : $bold;
+            font-size   : 22px;
+            color       : $black;
+            padding     : 0;
+            margin      : 0 0 8px;
+            text-align  : center;
+        }
+
+        p{
+            font-weight : $light;
+            font-size   : 16px;
+            color       : $gary-11;
+            padding     : 0 15px;
+            margin      : 0;
+            text-align  : center;
+            min-height  : 137px;
+        }
+
+        h6{
+            font-weight : $thin;
+            font-size   : 50px;
+            color       : $orange;
+            padding     : 42px 0 0;
+            margin      : 0 20%;
+            text-align  : center;
+            border-top  :3px solid $gary-13 ;
+        }
+    }
+
+    .additional-services-box-row{
+        margin-left  : -30px;
+        margin-right : -30px;
+        margin-top   : 40px;
+    }
+}
+
+.bottom-section{
+    .next-button{
+        display           : block;
+        text-align        : center;
+        color             : $white;
+        font-weight       : $light  ;
+        font-size         : 16px;           
+        border-radius     :3px;
+        margin-top        : 40px;
+        margin-bottom     : 40px;
+        padding           : 14px 0; 
+        background-image  : url(../images/next-button.png);
+        background-repeat : repeat-x;
+        background-size   : auto 100%;
+        text-transform    : uppercase;
+    }
+
+    .back-button{
+        display           : block;
+        text-align        : center;
+        color             : $white;
+        font-weight       : $light  ;
+        font-size         : 16px;           
+        border-radius     :3px;
+        margin-top        : 40px;
+        margin-bottom     : 40px;
+        padding           : 14px 0; 
+        background-image  : url(../images/back-button.png);
+        background-repeat : repeat-x;
+        background-size   : auto 100%;
+        text-transform    : uppercase;
+    }	
+}
+
+
+
+
+/*       
+        $thin      : 100;    
+        $light     :300;       
+        $regular   :400;       
+        $semi-bold : 500;        
+        $bold      : 700;
+*/
+
+
+
+

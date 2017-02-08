@@ -1,0 +1,15 @@
+ul.ui-autocomplete {
+	background: #fff;
+
+  transition: all 0.5s ease 0s;
+
+
+  transition-duration: 0.3s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  border: 1px solid #888;
+  border-top: 0px;
+  width: 100%;
+  position: relative;
+}
+

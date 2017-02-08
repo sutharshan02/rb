@@ -1,0 +1,297 @@
+
+
+<div id="template1" class="container black">
+  <div class="certificate">
+      <!-- <div class="topBlue"></div> -->
+    <div class="bottomBlue"></div>
+
+
+    <!--Main profile detail-->
+    <div class="tagInBox">
+      <div class="tagBlue"><strong>&nbsp;</strong></div>
+      <div class="tagDescribe">
+          
+
+                    <!--Profile header detail-->
+                    <div style="padding-top:20px;" class="name font-mt">
+                      <span class="black">{{resume.first_name || "First Name"}}</span>
+                      <span class="blue">{{resume.last_name || "Last Name"}}</span>
+                    </div>
+
+
+              
+
+
+                    <div class="contact address font-rw">
+                      
+                                <span class="li black font-mt li-first fw-medium">{{resume.address}}, {{resume.city}}, {{resume.state}} {{resume.zip_code}}  </span>
+
+                    </div><!--End profile header detail-->
+
+
+                    <div class="contact font-rw">
+                      <span class="li black font-mt li-first">Cell : </span> <strong>{{resume.phone_no || "Phone number"}}</strong>
+                      <span class="li black font-mt li-first">Email : </span> <strong>{{resume.email_address || "Address"}}</strong>
+                    </div><!--End profile header detail-->
+
+      </div>
+    </div><!--End main profile detail-->
+
+    <hr>
+    <!--SKILLS section-->
+    <div class="tagInBox">
+      <div class="tagBlue">
+        <strong class="blue">Profile</strong>
+
+      </div>
+      <div class="tagDescribe row">
+        
+       <div class="html text-justify col-xs-12" ng-bind-html="resume.profile_description"></div>
+
+      </div>
+    </div><!--End SKILLS section-->
+
+
+
+    <hr>
+    <!--EDUCATION section-->
+    <div  class="tagInBox">
+      <div class="tagBlue">
+    
+          <strong class="blue">EDUCATION</strong>
+
+        &nbsp;
+
+      </div>
+
+
+      <div class="tagDescribe row">
+
+      <any ng-repeat="school in education">
+
+  
+        <div style="display:table-cell;" class="col-xs-6 education-item" ng-class="{'clear-fix' :($index + 1 ) % 2, 'add-tp' :($index > 1)}" >
+        <div class="row">
+
+
+           <div class="col-xs-12"><strong class="black" >{{school.school_name}} </strong></div>
+
+           <div style="font-weight: 400;" class="col-xs-12">{{school.location}}</div>
+
+           <div class="col-xs-12 blue">{{school.degree}}</div>
+
+          <div class="col-xs-12"><span ng-if="school.gpa">GPA: {{school.gpa}}</span></div>
+          <div class="col-xs-12"><span ng-if="school.field_of_study">{{school.field_of_study}}</span></div>
+
+           <div class="Fright col-xs-12">
+
+           <any ng-if="school.start_year_text != null">
+                {{school.start_year_text.name || school.start_year}}
+                </any>
+              - <span ng-if="school.in_progress">
+                            Present
+            </span>
+
+             <span ng-if="!school.in_progress && school.graduation_year">
+              {{school.graduation_year.name || school.graduation_year || ""}} 
+            </span>
+
+                
+            </div>
+
+
+            <div class="html col-xs-12" ng-bind-html="school.description"></div>
+
+            <any ng-if="($index+1) % 2 == 0"> 
+
+             
+            </any>
+        </div>
+         
+
+        </div>
+
+        </any>
+
+      </div>
+
+
+      <br/>
+    </div>
+
+    <!--END EDUCATION section-->
+
+    <hr>
+    <!--SKILLS section-->
+    <div class="tagInBox">
+      <div class="tagBlue">
+        <strong class="blue">SKILLS</strong>
+
+      </div>
+      <div class="tagDescribe">
+
+        <div  ng-repeat="skill in skillsList" style="font-weight: 400;" class="li col-sm-6">
+          {{skill}}
+
+        </div>
+
+      </div>
+    </div><!--End SKILLS section-->
+
+    <hr>
+    <!--Experience section-->
+    <div class="tagInBox">
+      <div class="tagBlue">
+        <strong class="blue">Experience</strong>
+
+      </div>
+      <div class="tagDescribe">
+        <div ng-repeat="job in work" class="para3 row">
+
+          <div class="col-xs-7"><b class="black">{{job.company_name || "Company name"}}</b></div>
+
+
+          <div class="col-sm-5">
+           <!--  <b class="Fright"> 2015 - Present</b> -->
+
+           <div class="">{{job.start_year_text.name || job.start_year }} -
+
+            <any ng-if="job.is_present">
+              Present
+            </any>
+            <any ng-if="!job.is_present && job.end_year">
+              {{job.end_year_text.name || job.end_year || ""}} 
+            </any>
+
+
+          </div>
+        </div>
+  
+        <div class="col-xs-12 blue"> {{job.position}}</div>
+
+          <div class="col-xs-12" ng-if="job.description">
+            <div class="html" ng-bind-html="job.description"></div>
+            <br/>
+          </div>
+          <div class="col-xs-12" ng-if="job.responsibilities">
+            <div class="html" ng-bind-html="job.responsibilities"></div>
+          </div>
+
+        </div>
+      </div>
+    </div><!--End Experience section-->
+
+
+<hr>
+
+    <!--SKILLS section-->
+    <div class="tagInBox">
+      <div class="tagBlue">
+        <strong class="blue">&nbsp;&nbsp;</strong>
+
+      </div>
+      <div class="tagDescribe row">
+
+  
+
+
+
+    <div style="padding-bottom:20px; font-size: .6rem;" class="col-xs-12">
+    {{resume.address}}<any ng-if="resume.city">,
+  
+    {{resume.city}} 
+    </any><any ng-if="resume.state">,
+    {{resume.state}} {{resume.zip_code}} 
+    </any>
+
+    <any ng-if="resume.phone_no"><span class="blue">
+    | </span><span class="black">Cell </span> {{resume.phone_no || "Phone number"}}   
+    </any>
+
+    <any ng-if="resume.email_address"><span class="blue">
+    | </span><span class="black"> Email </span> {{resume.email_address || "Address"}}
+    </any>
+</div>
+
+
+      </div>
+    </div><!--End SKILLS section-->
+
+
+
+
+
+
+  </div>
+
+</div>
+
+<style type="text/css">
+  
+
+    .tagBlue, .font-mt{
+    
+    font-family: 'Montserrat', sans-serif;
+  }
+  .tagDescribe, .font-rw{
+    
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+  }
+
+
+
+  /* new template */
+
+    #template1 *{
+    
+    font-family: 'Hind', sans-serif;
+  }
+
+  #template1 .tagBlue {
+    width: 30%;
+  }
+  #template1 .tagDescribe {
+    width: 70%;
+  }
+
+
+#template1 .blue, #template1 .tagBlue, #template1 .black.black-blue {
+  color: #2da4a5;
+}
+#template1 .blue, #template1 .tagBlue, #template1 .black.black-blue {
+  color: #2da4a5;
+}
+#template1 .li:before {
+  content: '•';
+  display: inline-block;
+  padding-right: 13px;
+  color: #2da4a5;
+  transform: scale(2);
+  transform-origin: center 42%;
+}
+#template1 .contact .li:before, #template1 .li-address {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+#template1 .contact .li-first:before, #template1 .li-address.li-first {
+  padding-right: 8px;
+  padding-left: 3px;
+}
+#template1 .color-3a3a3a {
+  color: #3a3a3a;
+}
+#template1 *:not(.blue) {
+  color: #3a3a3a;
+}
+#template1 .fw-medium {
+  font-weight: 600;
+}
+#template1 .bottomBlue {
+  background-color: #2da4a5;
+}
+
+..col-xs-6.education-item.add-tp, .col-xs-6.education-item.clear-fix.add-tp {
+  padding-top:  20px !important;
+}
+</style>

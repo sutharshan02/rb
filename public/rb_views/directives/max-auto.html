@@ -1,0 +1,29 @@
+asfdsdfd]
+<input 
+
+ng-model="inputValue"
+	ng-focus="inputFocus()"
+autoInput type="text" placehoder="type and select skills">
+<ul class="autocomplete-container" ng-show="dropdownVisible">
+
+	<li
+	ng-repeat="item in items" 
+	ng-mouseenter="setActive($index)"
+	ng-click="selectItem(item)"
+
+	ng-class="{active: activeItemIndex == $index}"
+	 >
+	 {{item}} {{$index}}</li>
+</ul>
+
+<style>
+ul li {
+	/*color: red;*/
+}
+
+li.active {
+
+	background: #608AEB;
+}
+
+</style>

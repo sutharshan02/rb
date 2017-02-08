@@ -1,0 +1,166 @@
+<style>
+
+ .color-99a3a8 {
+    color: #99a3a8;
+  }
+
+</style>
+
+<div id="template1" class="container black">
+  <div class="certificate">
+
+    <!--Profile header detail-->
+    <div class="name font-mt ">
+      <span class="black">{{resume.first_name || "First Name"}}</span>
+      <span class="blue">{{resume.last_name || "Last Name"}}</span>
+    </div>
+    <div class="address font-rw color-99a3a8">{{resume.address}} <span class="blue">-</span> {{resume.city}} <span class="blue">-</span> {{resume.state}} {{resume.zip_code}}  </div>
+    <div class="contact font-rw color-99a3a8">
+      <span class="black"><strong>Cell</strong> </span> {{resume.phone_no || "Phone number"}}  &nbsp; | &nbsp; <span class="black"> <strong>Email</strong> </span> {{resume.email_address || "Address"}}
+    </div><!--End profile header detail-->
+
+    <hr>
+    <!--Main profile detail-->
+    <div class="tagInBox">
+      <div class="tagBlue"><strong>PROFILE</strong></div>
+      <div class="tagDescribe">
+        <div class="html text-justify" ng-bind-html="resume.profile_description"></div>
+      </div>
+    </div><!--End main profile detail-->
+
+    <hr>
+    <!--EDUCATION section-->
+    <div ng-repeat="school in education" class="tagInBox">
+      <div class="tagBlue">
+        <any ng-if="$index == 0">
+          <strong>EDUCATION</strong>
+        </any>
+        &nbsp;
+
+      </div>
+      <div class="tagDescribe">
+        <div>
+          <strong class="black">{{school.school_name}}</strong>, {{school.location}}<br>
+
+           <any ng-if="school.start_year_text != null">
+                {{school.start_year_text.name || school.start_year}}
+                </any>
+              - <span ng-if="school.in_progress">
+                            Present
+            </span>
+
+             <span ng-if="!school.in_progress && school.graduation_year">
+              {{school.graduation_year.name || school.graduation_year || ""}} 
+            </span>
+
+        </div>
+        <div><span class="">{{school.degree}}, <span ng-if="school.gpa">GPA: {{school.gpa}}</span></span></div>
+        <div class="html" ng-bind-html="school.description"></div>
+      </div>
+      <br/>
+    </div>
+
+    <!--END EDUCATION section-->
+
+    <hr>
+    <!--SKILLS section-->
+    <div class="tagInBox">
+      <div class="tagBlue">
+        <strong>SKILLS</strong>
+
+      </div>
+      <div class="tagDescribe">
+
+        <div  ng-repeat="skill in skillsList" style="font-weight: 400;" class="certifyTag col-sm-3">
+          {{skill}}
+
+        </div>
+
+      </div>
+    </div><!--End SKILLS section-->
+
+    <hr>
+    <!--Experience section-->
+    <div class="tagInBox">
+      <div class="tagBlue">
+        <strong>Experience</strong>
+
+      </div>
+      <div class="tagDescribe">
+        <div ng-repeat="job in work" class="para3 row">
+
+          <div class="col-xs-8"><b class="black">{{job.company_name || "Company name"}}</b></div>
+
+
+          <div class="col-sm-4">
+           <!--  <b class="Fright"> 2015 - Present</b> -->
+
+           <b class="Fright">
+
+           <any ng-if="job.start_year_text != null && job.start_year != '0000'">
+          {{job.start_year_text.name || job.start_year}}
+          </any>
+           - <any ng-if="job.is_present">
+            Present
+          </any>
+          <any ng-if="!job.is_present && job.end_year && job.end_year != null && job.end_year != '0000'">
+            {{job.end_year.name || job.end_year || ""}} 
+          </any>
+
+
+          </b>
+        </div>
+
+
+          <div class="col-xs-12" ng-if="job.description">
+            <div class="html" ng-bind-html="job.description"></div>
+            <br/>
+          </div>
+          <div class="col-xs-12" ng-if="job.responsibilities">
+            <div class="html" ng-bind-html="job.responsibilities"></div>
+          </div>
+
+        </div>
+      </div>
+    </div><!--End Experience section-->
+
+    <div class="address2 color-99a3a8">
+    {{resume.address}} 
+
+    <any ng-if="resume.city">
+    <span class="blue">-</span> 
+    {{resume.city}} 
+    </any>
+
+
+    <any ng-if="resume.state">
+    <span class="blue">-</span> 
+    {{resume.state}} {{resume.zip_code}} 
+    </any>
+
+    <any ng-if="resume.phone_no"><span class="blue">
+     &nbsp; | &nbsp; </span><span class="black">Cell </span> {{resume.phone_no || "Phone number"}}   
+    </any>
+
+    <any ng-if="resume.email_address"><span class="blue">
+    &nbsp; | &nbsp;  </span><span class="black"> Email </span> {{resume.email_address || "Address"}}</div>
+    </any>
+
+
+  </div>
+
+</div>
+
+<style type="text/css">
+  
+
+    .tagBlue, .font-mt{
+    
+    font-family: 'Montserrat', sans-serif;
+  }
+  .tagDescribe, .font-rw{
+    
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+  }
+</style>

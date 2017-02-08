@@ -1,0 +1,213 @@
+<style>
+.fs-main {
+  font-size:  1rem;
+}
+
+</style>  
+
+
+<div id="template1" class="container black">
+  <div class="certificate">
+    <div class="topBlue"></div>
+    <div class="bottomBlue"></div>
+    <div class="blueTop">
+
+      <div class="row">
+
+
+       <div class="col-xs-12"> <div class="col-sm-7">
+                 <h1 class="user-name">{{resume.first_name || "First Name"}} {{resume.last_name || "Last Name"}}</h1>
+       
+               </div>
+               <div class="col-sm-5">
+                 <div class="contact-detail">
+                   <div>{{resume.phone_no || "Phone number"}}  </div>
+                   <div>{{resume.email_address || "Email Address"}}</div>
+                   <div>{{resume.address}}, {{resume.city}} <br/> {{resume.state}} {{resume.zip_code}} </div>
+                 </div>
+               </div>
+       </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <div class="certificateRow dashbottom">
+      <div class="logName col-xs-4">Profile</div>
+      <div class="html ContentLog col-xs-8 text-justify" ng-bind-html="resume.profile_description" class="ContentLog col-xs-8 text-justify"></div>
+    </div>
+
+    <div class="certificateRow dashbottom">
+      <div class="logName col-xs-4">Education</div>
+      <div class="ContentLog col-xs-8">
+        <div class="row">
+          <div ng-repeat="school in education" class="col-sm-12">
+
+          <div class="row">
+                    <div class="col-sm-8"> 
+                      <h4 class="fs-main"><strong>{{school.school_name}}</strong><span class="school_location"  ng-if="school.location">, {{school.location}}</span></h4>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <strong class="Fright fs-main" >
+                  <any ng-if="school.start_year_text != null">
+                      {{school.start_year || school.start_year}} -
+                  </any>
+
+
+                        <any ng-if="school.in_progress">
+                          Present
+                        </any>
+                        <any ng-if="!school.in_progress && school.graduation_year">
+                          {{school.graduation_year.name || school.graduation_year || ""}} 
+                        </any>
+
+                      </strong>
+                    </div>
+          </div>
+          
+          <div class="row">
+
+                 <div class="grayColor col-xs-12">
+                        {{school.degree}}, <span ng-if="school.gpa">GPA: {{school.gpa}}</span><br />
+
+                        <span ng-if="school.field_of_study"> {{school.field_of_study}}<br /></span>
+
+                 
+
+                      <div class="html" ng-bind-html="school.description"></div>
+                    </div>
+            
+          </div>
+            <br/>         
+            <br/>         
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="certificateRow dashbottom">
+    <div class="logName col-xs-4">Skills</div>
+    <div class="ContentLog col-xs-8">
+      <div class="row">
+       <any ng-repeat="skill in skillsList">
+        <div class="col-sm-4">
+
+
+          <p>{{skill}}</p>
+        </div>
+      </any>
+    </div>
+  </div>
+</div>
+
+<div class="certificateRow dashbottom">
+  <div class="logName col-xs-4">Experience</div>
+  <div class="ContentLog col-xs-8">
+    <div ng-repeat="job in work" class="companyBox row" style="margin-bottom: 20px;">
+        <div class="col-xs-8">
+          <h4 class="bold fs-main">{{job.company_name || "Company name"}} <span ng-if="job.location" class="work_location"> - {{ job.location }} </span> </h4>
+        </div>
+        
+        <div class="col-xs-4 text-right">
+               <strong class="bold fs-main">
+               <any ng-if="job.start_year_text != null">
+                {{job.start_year_text.name || job.start_year}}
+                </any>
+                 - <any ng-if="job.is_present">
+                  Present
+                </any>
+                <any ng-if="!job.is_present && job.end_year">
+                  {{job.end_year.name || job.end_year || ""}} 
+                </any>
+              </strong>
+        </div>
+ 
+
+      <div class="col-xs-12">
+         <h4 class="color-99999 bold">  {{job.position || "Position"}}</h4>
+      </div>
+
+
+      <div ng-if="job.description" class="col-xs-12">
+        <div class="html" ng-bind-html="job.description"></div>
+      </div>
+      <div ng-if="job.responsibilities" class="col-xs-12">
+        <div class="html" ng-bind-html="job.responsibilities"></div>
+      </div>
+   
+  </div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+<style type="text/css">
+  
+        #template1, #template1 * {
+        font-family: 'Droid Serif', serif !important;
+        }
+
+        .bold {
+            font-weight: 700 !important;
+        }
+        .logName {
+            font-weight: 700;
+        }
+
+        .i {
+            font-style: italic;
+        }
+
+        .rbm {
+            margin-bottom: 0;
+        }
+
+        .color-99999 {
+            color: #999999 !important;
+        }
+
+
+
+
+.user-name, 
+.contact-detail, 
+.logName, 
+.ContentLog, 
+.grayColor, 
+.html
+{
+
+        font-family: 'Droid Serif', serif !important;
+
+}
+
+
+#template1 h4 {
+  
+  margin-top: 0 !important;
+
+  margin-bottom: 4px !important;
+}
+
+#template1 .html {
+  display:  block;
+  text-align: justify !important;
+}
+
+</style>

@@ -1,0 +1,56 @@
+.wh-closed .wh-details {
+	transform: scaleY(0);
+	height: 10px;
+}
+
+.wh-closed .wh-details.wh-details-education {
+    transform: scaleY(0);
+    height: 10px;
+}
+
+.wh-details.wh-details-education {
+        height: 630px;
+
+}
+
+.wh-details {
+    height: 766px;
+	transition: .2s all;
+    
+    transform-origin: top;
+}
+
+
+
+.wh-closed {
+	cursor: pointer;
+}
+
+
+
+
+.work-history-section .work-history-complete .common i {
+    padding: 27px 0;
+    font-size: 18px;
+    color: #a2afba;
+}
+
+.work-history-section .work-history-complete .common i:hover {
+    color: #f54f4f;
+}
+
+
+
+
+.work-delete-icon {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/*img {
+    vertical-align: middle;
+}
+img {
+    border: 0;
+}
+* {*/

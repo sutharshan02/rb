@@ -1,0 +1,469 @@
+<style>
+.work-history-complete.clearfix {
+    border: 2px solid rgba(255, 114, 0, 0.5);
+}
+
+</style>
+
+<ng-include src="'../rb_views/templates/css.html'" autoscroll></ng-include>
+<div ng-show="loading" style="
+background: transparent;
+position: fixed;
+text-align: center;
+width: 100%;
+z-index: 100;
+pointer-events: none;
+">
+
+<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+
+</div>
+
+<section class="setup-nav">
+  <div class="container">
+    <div class="row">
+      <ul class="clearfix">
+        <li class="completed-section">
+          <p>
+            <img src ="../assets/images/st-1-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-1-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>About you</span>
+          </p>
+        </li>
+        <li class="completed-section">
+          <p>
+            <img src ="../assets/images/st-2-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-2-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>Profile</span>
+          </p>
+        </li>
+        <li class="completed-section">
+          <p>
+            <img src ="../assets/images/st-3-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-3-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>Work History</span>
+          </p>
+        </li>
+        <li class="active-step">
+          <p>
+            <img src ="../assets/images/st-4-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-4-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>Education</span>
+          </p>
+        </li>
+        <li >
+          <p>
+            <img src ="../assets/images/st-5-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-5-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>Skills</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- setup-nav -->
+<section class="rb-inner-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+        <div class="row heading">
+          <div class="left">
+            <h1>Step 4</h1>
+          </div>
+          <div class="right">
+            <h1>Education</h1>
+          </div>
+        </div>
+        <!-- heading -->
+
+        <section ng-show="loadingError" style="padding:10px;">
+
+          <div class="server-error">Internal Server error, please refresh and try again.. <br/>
+            If this error persists, please contact the site administrator.. </div>
+          </section>
+          <!-- data loading error message -->
+
+          
+   <!-- instruction text -->
+        <section>
+           <div class="alert alert-info">
+
+
+Typically, only the highest level of education achieved is listed on a resume. If you choose to list more than one degree, then list them in chronological order starting with the most recent one first.
+            </div>
+
+        </section> 
+
+          <div class="row work-history-section">
+            <any ng-repeat="school in schools">
+              <!-- <div>{{school}}</div> -->
+              <div class="col-xs-12 work-history-box " ng-class="{'wh-closed': school.closed}" >
+                <div class="work-history-complete clearfix" >
+                  <div class="left common" ng-click="toggle($index);"  >
+                    <img src ="../assets/images/work-drag.png" alt="" class="img-responsive"> 
+                  </div>
+                  <!-- left -->
+                  <div class="mid common" ng-click="toggle($index);">
+                    <h4>{{school.school_name}} <span>{{school.degree}} - {{school.field_of_study}}</span></h4>
+                    <p>{{school.start_month_text.name + " " + school.start_year_text.name}} -
+                      <span ng-hide="school.in_progress">
+                       {{school.graduation_month_text.name + " " + school.graduation_year_text.name}}  
+                     </span>
+                     <span ng-show="school.in_progress">still following</span></p>
+                   </div>
+                   <!-- left -->
+                   <div class="right common" >
+                    <!-- <img src ="../assets/images/work-delete.png" alt="" class="img-responsive">   -->
+                    <i ng-click="deleteSchool(school.education_id, $index)" class="fa fa-trash-o work-delete-icon"></i>
+                  </div>
+                  <!-- left -->
+                </div>
+                <!-- work-history-complete -->
+                <div class="col-xs-12 work-history-box wh-details wh-details-education ">
+                  
+                  <div  class="row work-history-section">
+                    <div class="col-xs-12">
+                      <div class="row form-section">
+                        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                          <label>School Name</label>
+                          <input type="text" class="" placeholder="School Name" ng-model="school.school_name">
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                          <label>Location</label>
+                          <input type="text" class="" placeholder="Location" ng-model="school.location">
+                        </div>
+                      </div>
+                      <!-- form-section --> 
+                      <div class="row form-section">
+                        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                          <label>Degree</label>
+                          <input type="text" class="" placeholder="Degree" ng-model="school.degree">
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                          <label>GPA</label>
+                          <input type="text" class="" placeholder="GPA" ng-model="school.gpa">
+                        </div>
+                      </div>
+                      <!-- form-section --> 
+                      <div class="row form-section">
+                        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                          <label>Field of Study</label>
+                          <input type="text" class="" placeholder="Field of Study" ng-model="school.field_of_study">
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                          <label>Grade</label>
+                          <input type="text" class="" placeholder="Grade" ng-model="school.grade">
+                        </div>
+                      </div>
+                      <!-- form-section --> 
+                      <div class="row form-section">
+                        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <label>Start Date</label>
+                              <div class="row row_clr work-date">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                  <div class="row">
+                              <!-- <select name="" class="boder-select" >
+                                <option value=""></option>
+                                <option value="">Jan</option>
+                              </select> -->
+                              <select class="boder-select" ng-options="item as item.name for item in months track by item.id" ng-model="school.start_month_text"></select>
+                            </div>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="row">
+                              <!-- <select name="" class="last" >
+                                <option value=""></option>
+                                <option value="CA">2006</option>
+                              </select> -->
+                              <select class="last" ng-options="item as item.name for item in years track by item.id" ng-model="school.start_year_text"></select>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- row_clr -->
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <label>Graduation Date</label>
+                        <div class="row row_clr work-date">
+                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="row">
+                            <!--   <select name="" class="boder-select" >
+                                <option value=""></option>
+                                <option value="">Jan</option>
+                              </select> -->
+                              <select class="boder-select" ng-class="{disabled: school.in_progress}" ng-disabled="school.in_progress" ng-options="item as item.name for item in months track by item.id" ng-model="school.graduation_month_text"></select>
+                            </div>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="row">
+                            <!--   <select name="" class="lastdel
+                                <option value=""></option>
+                                <option value="CA">2006</option>
+                              </select> -->
+                              <select class="last" ng-class="{disabled: school.in_progress}" ng-disabled="school.in_progress" ng-options="item as item.name for item in years track by item.id" ng-model="school.graduation_year_text"></select>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- row_clr -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <label>&nbsp;</label>
+                    <div class="checkbox">
+                      <label class="working-box">
+                        <input type="checkbox" ng-model="school.in_progress"
+                        ng-true-value="1" ng-false-value="0">
+                        &nbsp; In progress
+                      </label>
+
+                    </div>
+                  </div>
+                </div>
+
+                 <!-- form-section -->  
+                <div class="row form-section">
+                  <div class="col-xs-12">
+                    <label>Description</label>
+                    <textarea ng-model="school.description" name="" id="" class="" rows="6" placeholder="Please type..."></textarea>
+                  </div>
+                </div>
+                <!-- form-section -->
+
+
+                <!-- form-section -->  
+                <div class="row form-section">
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 pull-right">
+                    <a class="add-degree" href="" ng-click="updateSchool(school, school.index)"> <img src ="../assets/images/add-button.png" alt="" class="" > Save Degree</a>
+                  </div>
+                </div>
+                <!-- form-section -->
+                <div class="work-history-box-border">
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+
+      </any>
+    </div>
+
+
+    <div ng-show="front_Val_failed" class="alert alert-warning"> please enter the School Name</div>
+    <div ng-show="formVisible" class="row work-history-section">
+      <form name="form1">
+        <div class="col-xs-12">
+          <div class="row form-section">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+              <label>School Name *</label>
+              <input required type="text" class="" ng-model="new.school_name" placeholder="School Name">
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <label>Location</label>
+              <input type="text" class="" ng-model="new.location" placeholder="Location">
+            </div>
+          </div>
+          <!-- form-section --> 
+          <div class="row form-section">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+              <label>Degree</label>
+              <input type="text" class="" ng-model="new.degree" placeholder="Degree">
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <label>GPA</label>
+              <input type="text" class="" ng-model="new.gpa" placeholder="GPA">
+            </div>
+          </div>
+
+
+          <!-- form-section --> 
+          <div class="row form-section">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+              <label>Field of Study</label>
+              <input type="text" class="" ng-model="new.field_of_study" placeholder="Field of Study">
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <label>Grade</label>
+              <input type="text" class="" ng-model="new.grade" placeholder="Grade">
+            </div>
+          </div>
+          <!-- form-section --> 
+
+          <div class="row form-section">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <label>Start Date *</label>
+                  <div class="row row_clr work-date">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                      <div class="row">
+                             <!--  <select name="" class="boder-select" >
+                                <option value=""></option>
+                                <option value="">Jan</option>
+                              </select> -->
+                              <select  class="boder-select" ng-options="item as item.name for item in months track by item.id" ng-model="new.start_month"></select>
+                            </div>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="row">
+                              <!-- <select name="" class="last" >
+                                <option value=""></option>
+                                <option value="CA">2006</option>
+                              </select> -->
+                              <select  class="last" ng-options="item as item.name for item in years track by item.id" ng-model="new.start_year"></select>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- row_clr -->
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <label>Graduation Date</label>
+                        <div class="row row_clr work-date">
+                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="row">
+                              <!-- <select name="" class="boder-select" >
+                                <option value=""></option>
+                                <option value="">Jan</option>
+                              </select> -->
+                              <select class="boder-select" ng-class="{disabled: new.in_progress}" ng-disabled="new.in_progress" ng-options="item as item.name for item in months track by item.id" ng-model="new.graduation_month"></select>
+                            </div>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="row">
+                              <!-- <select name="" class="last">
+                                <option value=""></option>
+                                <option value="CA">2006</option>
+                              </select> -->
+                              <select class="last" ng-class="{disabled: new.in_progress}" ng-disabled="new.in_progress" ng-options="item as item.name for item in years track by item.id" ng-model="new.graduation_year"></select>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- row_clr -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <label>&nbsp;</label>
+                    <div class="checkbox">
+                      <label class="working-box">
+                        <input type="checkbox" ng-change="toggle_in_progress()" ng-model="new.in_progress"
+                        ng-true-value="1" ng-false-value="0">
+
+                        &nbsp; In progress
+
+                      </label>
+
+                    </div>
+                  </div>
+                </div>
+
+                 <!-- form-section -->  
+                <div class="row form-section">
+                  <div class="col-xs-12">
+                    <label>Description</label>
+                    <textarea ng-model="new.description" name="" id="input" class="" rows="6" placeholder="Please type..."></textarea>
+                  </div>
+                </div>
+                <!-- form-section -->
+
+
+                <!-- form-section -->  
+                <div class="row form-section">
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 pull-right">
+                    <a class="add-degree" href="" ng-click="addEducation()"> <img src ="../assets/images/add-button.png" alt="" class=""> Add Degree</a>
+                  </div>
+                </div>
+                <!-- form-section -->
+                <div class="work-history-box-border">
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+          <!-- form-section -->
+          <div class="row form-section">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <a class="back-button" href="#/step3" ng-click="goback()">Back</a>   
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <a class="next-button" href="" ng-click="nextStep()">Next</a>   
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- form-section -->
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xs-offset-1 preview-section">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 preview-wrapper">
+              <ng-include ng-if="!previewOpen" src="'../rb_views/templates/'+ preview_template_id +'/cv.html?235'" autoscroll>
+            </div>
+            <!-- preview-wrapper -->
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 preview-button"  ng-click="openPreview()">
+              <h6>
+                <img src ="../assets/images/preview-button.png" alt="" class="img-responsive logo-image">
+              </h6>
+            </div>
+            <!-- preview-wrapper -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- rb-inner-wrapper -->
+
+  <style ng-if="previewOpen">
+  html {
+    font-size: 120%;
+  }
+
+  </style>
+
+  
+  <!-- Modal -->
+  <div ng-if="previewOpen" id="myModal" class="modal fade in " ng-click="closePreview()" ng-style="modalOpenStyle" >
+    <div class="modal-dialog modal-lg" ng-click="$event.stopImmediatePropagation()">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+     <!--    <div class="modal-header">
+          <button type="button" ng-click="closePreview()" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div> -->
+        <div class="modal-body" style="height: 80vh; overflow-y: scroll;">
+         
+          <ng-include src="'../rb_views/templates/'+ preview_template_id +'/cv.html?53'" autoscroll>
+
+        </ng-include>
+
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
+<style>
+select.disabled {
+  background: #eee;
+}
+
+select.disabled, select.disabled * {
+  color: #eee;
+}
+</style>

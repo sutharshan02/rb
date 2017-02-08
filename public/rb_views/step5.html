@@ -1,0 +1,183 @@
+ <ng-include src="'../rb_views/templates/css.html'" autoscroll></ng-include>
+<div class="loading-spinner" ng-show="loading" >
+  <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+  <span class="sr-only">Loading...</span>
+
+</div>
+<section class="setup-nav">
+  <div class="container">
+    <div class="row">
+      <ul class="clearfix">
+        <li class="completed-section">
+          <p>
+            <img src ="../assets/images/st-1-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-1-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>About you</span>
+          </p>
+        </li>
+        <li class="completed-section">
+          <p>
+            <img src ="../assets/images/st-2-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-2-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>Profile</span>
+          </p>
+        </li>
+        <li class="completed-section">
+          <p>
+            <img src ="../assets/images/st-3-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-3-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>Work History</span>
+          </p>
+        </li>
+        <li class="completed-section">
+          <p>
+            <img src ="../assets/images/st-4-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-4-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>Education</span>
+          </p>
+        </li>
+        <li class="active-step">
+          <p >
+            <img src ="../assets/images/st-5-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-5-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>Skills</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- setup-nav -->
+<section class="rb-inner-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+        <div class="row heading">
+          <div class="left">
+            <h1>Step 5</h1>
+          </div>
+          <div class="right">
+            <h1>Skills</h1>
+          </div>
+        </div>
+        <!-- heading -->
+
+
+        <section ng-show="loadingError" style="padding:10px;">
+
+          <div class="server-error">Internal Server error, please refresh and try again.. <br/>
+            If this error persists, please contact the site administrator.. </div>
+          </section>
+          <!-- data loading error message -->
+
+
+          
+          <div class="row">
+            <div class="col-xs-12 skills-box">
+              <div class="row form-section">
+                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                  <label>Add Skills</label>
+                  
+                  
+                  <br/>
+<!--                   <input type='text' 
+                  placeholder="Start typing and add from the list of skills"
+                  id="searchInputField" ng-model="searchKey" ng-keydown="autoInput()" autocomplete="off">
+ -->              
+                  <input type='text' 
+                  placeholder="Start typing and add from the list of skills"
+                  id="searchInputField" ng-model="searchKey" autocomplete="off">
+                  
+
+                  
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 add-button-wrapper">
+                  <a class="skill-add-button" href="" ng-click="addItem()"> <img src ="../assets/images/add-button.png" alt="" class=""> ADD</a>
+                </div>
+              </div>
+              <!-- form-section -->
+              <div class="row skill-section">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <p ng-repeat="skill in skills"><span>{{skill}}</span> <i style="color:#aaa;cursor: pointer; font-size: 11px;" ng-click='removeSkill(skill)' class="fa fa-close"></i></p>
+                  
+                </div>
+
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class ="box-border">
+                  </div>
+                </div>
+              </div>
+              <!-- form-section --> 
+            </div>
+          </div>
+          <!-- form-section -->
+          <div class="row form-section">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <a class="back-button" href="#/step4">Back</a>   
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <a class="next-button" ng-click="nextStep();">Next</a>   
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- form-section -->
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xs-offset-1 preview-section">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 preview-wrapper">
+              <ng-include ng-if="!previewOpen" src="'../rb_views/templates/'+ preview_template_id +'/cv.html?23'" autoscroll>
+            </div>
+            <!-- preview-wrapper -->
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 preview-button"  ng-click="openPreview()">
+              <h6>
+                <img src ="../assets/images/preview-button.png" alt="" class="img-responsive logo-image">
+              </h6>
+            </div>
+            <!-- preview-wrapper -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- rb-inner-wrapper -->
+
+  <style ng-if="previewOpen">
+  html {
+    font-size: 120%;
+  }
+
+  </style>
+  
+  <!-- Modal -->
+  <div ng-if="previewOpen" id="myModal" class="modal fade in " ng-click="closePreview()" ng-style="modalOpenStyle" >
+    <div class="modal-dialog modal-lg" ng-click="$event.stopImmediatePropagation()">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+    <!--     <div class="modal-header">
+          <button type="button" ng-click="closePreview()" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div> -->
+        <div class="modal-body" style="height: 80vh; overflow-y: scroll;">
+         
+          <ng-include src="'../rb_views/templates/'+ preview_template_id +'/cv.html?32'" autoscroll>
+
+        </ng-include>
+
+      </div>
+      
+    </div>
+
+  </div>
+</div>

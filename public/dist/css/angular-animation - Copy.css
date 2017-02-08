@@ -1,0 +1,52 @@
+
+.ngview , .ngview *{
+  transition: all 300ms ease-in-out;
+}
+ .ngview.ng-enter .rb-inner-wrapper{
+  opacity: 0;
+  transition-delay: 50ms;
+  transform: scale(1.1);
+
+}
+
+ .ngview.ng-enter-active .rb-inner-wrapper {
+  opacity: 1;
+  transform: scale(1);
+
+}
+
+ .ngview.ng-leave .rb-inner-wrapper{
+  opacity: 1;
+ transform: scale(1);
+}
+
+ .ngview.ng-leave-active .rb-inner-wrapper{
+  opacity: 0;
+ transform: scale(.9);
+}
+.work-item {
+  opacity: 1;
+  transition: all 1000ms ease-in-out;
+  transform-origin: top left;
+}
+
+.work-item.ng-leave {
+  opacity: 1;
+  /*transform: scaleY(1);*/
+}
+
+.work-item.ng-leave-active {
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+
+.work-item.ng-enter {
+  opacity: 0;
+
+}
+
+.work-item.ng-enter-active {
+  opacity: 1;
+
+}

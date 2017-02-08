@@ -1,0 +1,123 @@
+
+
+<div id="template1" class="container black">
+  <div class="certificate">
+     <h1>{{resume.first_name || "First Name"}} {{resume.last_name || "Last Name"}}</h1>
+
+
+    <div class="certificateRow">
+      <div class="logName">Profile</div>
+      <div class="html ContentLog text-justify" ng-bind-html="resume.profile_description" class="ContentLog"></div>
+    </div>
+
+    <div class="certificateRow">
+      <div class="logName">Education</div>
+      <div class="ContentLog">
+        <div class="row">
+          <div ng-repeat="school in education" class="col-sm-4">
+            <h4>{{school.school_name}}</h4>
+
+            <div class="grayColor">
+
+
+              <div class="school-row">{{school.degree}}</div>
+
+
+              <div class="school-row" ng-if="school.gpa">GPA: {{school.gpa}}</div>
+
+              <div class="school-row" ng-if="school.field_of_study"> {{school.field_of_study}}</div>
+
+
+              <div class="school-row">
+                <any ng-if="school.start_year_text != null">
+                {{school.start_year_text.name || school.start_year}}
+                </any>
+              - <span ng-if="school.in_progress">
+                            Present
+            </span>
+
+             <span ng-if="!school.in_progress && school.graduation_year">
+              {{school.graduation_year.name || school.graduation_year || ""}} 
+            </span>
+
+            </div>
+  
+          <div class="html" ng-bind-html="school.description"></div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+    <div class="certificateRow">
+    <div class="logName">Skills</div>
+    <div class="ContentLog">
+      <div class="row">
+       <any ng-repeat="skill in skillsList">
+        <div class="col-sm-4">
+
+
+          <p>{{skill}}</p>
+        </div>
+      </any>
+    </div>
+  </div>
+</div>
+
+    <div class="certificateRow">
+  <div class="logName">Experience</div>
+  <div class="ContentLog">
+    <div ng-repeat="job in work" class="companyBox">
+      <h4 class="work-row" style="margin-top: 0px; margin-bottom: 0px;">{{job.company_name || "Company name"}} </h4>                   
+      <h4 class="work-row" style="margin-top: 0px; margin-bottom: 0px;">  {{job.position || "Position"}}</h4>
+      <div ng-if="job.description">
+  
+        <div class="html" ng-bind-html="job.description"></div>
+      </div>
+
+      <div class="work-row" ng-if="job.responsibilities">
+
+        <div class="html" ng-bind-html="job.responsibilities"></div>
+      </div>
+     <div class="work-row"> <b>
+
+    <any ng-if="job.start_year_text != null && job.start_year != '0000'">
+    {{job.start_year_text.name || job.start_year}}
+    </any>
+     - <any ng-if="job.is_present">
+      Present
+    </any>
+    <any ng-if="!job.is_present && job.end_year && job.end_year != null && job.end_year != '0000'">
+      {{job.end_year.name || job.end_year || ""}} 
+    </any>
+         </b></div>
+  </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+ </div>
+</div>
+
+<style>
+
+  .school-row, .work-row {
+    padding-bottom: 3px;
+    padding-top: 3px;
+  }
+
+  .no-margin {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+</style>

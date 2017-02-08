@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html style="margin: 0px;">
+<head>
+  <title>TODO supply a title</title>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+  <style>
+
+  h1,h2,h3,h4{color:#044875}hr{border:none;display:inline-block}.upper-margin{width:100%;height:30px;background-color:#044875;margin-left:0px;margin-right:0px;margin-top:0px}.footer{width:100%;height:20px;background-color:#044875}.container{display:block;padding-left:1.33em;padding-right:1.33em}.left{width:60%;float:left}.left h2{font-size:1.33em;font-family:serif;margin-bottom:2px}.left h4{margin-top:2px;font-style:italic;font-size:.9625em}.right{width:auto;float:right;text-align:right}.right p{color:#044875;margin-top:2px;font-weight:bold;margin-bottom:4px;font-style:italic;font-size:.7875em}.text-heading{width:20%;float:left}.content{width:80%;float:left;margin-bottom:24px}.content h5{color:#666;font-size:1em;margin-bottom:0px}.content p{color:#777;font-family:sans-serif;font-size:.6566em;line-height:20px}.text-block{margin-top:40px}.seperator{border-bottom:1px #044875 dashed;margin-top:15px;width:96%}.name{width:40%;float:left}.period{width:60%;float:left;text-align:right;margin-top:36px;color:#888;font-style:italic}.top-heading{min-height:80px}.top-heading h6{font-size:.7875em;margin-bottom:0px;font-style:italic;margin-top:24px}.top-heading p{margin-top:0px;margin-bottom:1px;font-style:italic}.parent{height:auto;display:inline-block}h2{font-size:.931em}h2.title{font-size:1.33em}
+
+.right
+{
+    width: 40%;
+    float: left;
+    text-align: right;
+    padding-top: 20px
+
+}
+.right p {
+  font-weight: normal;
+  font-size: .7em;
+}
+
+
+.period {
+    width: auto;
+    float: right;
+    text-align: right;
+    margin-top: .7em;
+    color: #888;
+    font-style: italic;
+    font-weight: normal;
+  font-size: .7em;
+}
+
+.content p {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: .5em;
+}
+
+.top-heading p {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  /*border: 1px solid red;*/
+}
+
+.upper-margin {
+  margin:0px;
+}
+
+.parent {
+  width: 100%;
+}
+
+  </style>
+
+</head>
+<body style="margin: 0px">
+  <div class="upper-margin"></div>
+
+  <div class="parent">
+    <div class="container">
+      <div style="min-height: 120px;margin-top: 60px;">
+        <div class="left">
+          <h2 class="title">{{$data['personal']['first_name']}}  {{$data['personal']['last_name']}}</h2>
+          <!-- <h4>Human Resources Manager</h4> -->
+        </div>
+        <div class="right">
+          <p>{{$data['personal']['phone_no']}}</p>
+          <p>{{$data['personal']['email_address']}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <div class="text-block">
+        <div class="text-heading">
+          <h2>Profile</h2>
+        </div>
+        <div class="content">
+          <p>
+            {{$data['personal']['profile_description']}}
+          </p>
+        </div>
+      </div>
+      <hr class="seperator" />
+    </div>
+
+            <!-- <div class="container">
+                <div class="text-block" style="margin-top: 40px">
+                    <div class="text-heading">
+                        <h2>Profile</h2>
+                    </div>
+                    <div class="content">
+                        <h5>Payroll</h5>
+                        <p>
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                        </p>
+
+                        <h5>Recruitment</h5>
+                        <p>
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                        </p>
+
+                        <h5>Termination</h5>
+                        <p>
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                        </p>
+
+                        <h5>Recruitment</h5>
+                        <p>
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                        </p>
+
+                    </div>
+                </div>
+                <hr class="seperator" />
+              </div> -->
+
+              <div class="container">
+                <div class="text-block" style="margin-top: 40px">
+                  <div class="text-heading">
+                    <h2>Experience</h2>
+                  </div>
+                  <div class="content">
+
+
+                    @foreach ($data['work']  as $work) 
+                    <div class="top-heading">
+                      <div class="name">
+                        <h6> {{$work['company_name']}}</h6>
+                        <p>{{$work['position']}} </p>
+                      </div>
+                      <?php
+                      // check dates
+                      $start = substr($work['start_date'], 0, 4);
+                      $end = substr($work['end_date'], 0, 4);
+                      $start_date = ($start == "0000") ? "" : $start;
+                      $end_date = ($end == "0000") ? "" : $end;
+
+                      ?>
+                      <div class="period">{{ $start_date }} - {{ $end_date }}</div>
+                    </div>
+                    <p>
+                     {{$work['description']}}
+                   </p>
+
+                   @endforeach
+
+                 </div>
+
+                 <div class="text-block" style="margin-top: 40px">
+                    <?php $i = 0; ?>
+                    @foreach ($data['education']  as $education) 
+                  <div class="text-heading">
+
+                    <h2><?php echo ($i == 0) ? "Education" : "";  ?></h2>
+                  </div>
+
+                  <div class="content">
+
+                    <div class="top-heading">
+                      <div class="name">
+                        <h6>{{$education['school_name']}}</h6>
+                        <p>{{$education['degree']}} </p>
+                        <p>{{$education['field_of_study']}} </p>
+
+                      </div>
+
+                    </div>
+                  </div>
+                    <br/>
+                    <?php $i++; ?>
+                    @endforeach
+                </div>
+
+
+
+
+
+              </div>
+              <hr class="seperator" style="border: none" />
+            </div>
+
+          <div class="container">
+                <div class="text-block">
+                  <div class="text-heading">
+                    <h2>Skills</h2>
+                  </div>
+                  <div class="content">
+                    <?php 
+
+                      $skills = $data['skills']['skills'];
+                      $skillArray = explode(",", $skills);
+                      // var_dump($skillArray);
+                      ?>
+
+                      <?php foreach($skillArray as $s): ?>
+                    <p>
+                        <?php echo $s; ?>
+                    </p>
+
+                      <?php endforeach; ?>
+                  </div>
+                </div>
+                <hr class="seperator" />
+              </div>
+
+
+          </div>
+
+          <div class="footer">    
+          </div>
+
+        </body>
+        </html>

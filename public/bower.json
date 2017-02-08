@@ -1,0 +1,23 @@
+{
+  "name": "public",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "BhanukaAxis <bhanuka@izonedevelopers.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "^1.5.8",
+    "angular-messages": "^1.6.0",
+    "ng-media-query": "*",
+    "angular-sanitize": "^1.6.0"
+  }
+}

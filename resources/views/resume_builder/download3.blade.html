@@ -1,0 +1,220 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <title></title>
+
+  <style type="text/css">
+  body{
+    padding:0px;
+    margin:0px;
+  
+  }
+  table{width:100%}table th{text-align:left}table td.title{width:20%}table td.description{width:80%}td{vertical-align:top}.name{font-size:1.7em}td,th{padding:.8em 0}.title p{font-size:.68em;font-weight:600}.description p{font-size:.563em;font-weight:100}.description.job p{margin:.17em 0}p.company{font-size:.6em;font-weight:600}p.duration,p.position{font-size:.58em;font-weight:600}p.position{font-style:italic}.description.job p.description{margin-top:.61em}
+
+    table {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  tr.secondery td {
+    padding-top: 0em;
+  }
+
+  td, th {
+    /*border: 1px solid #888;*/
+  }
+
+  th * {
+    color: #2687ff;
+  }
+
+  tr.hr td {
+    border-bottom: 2px solid #eaedee;
+  }
+
+  tr.hr-up td {
+    border-top: 2px solid #eaedee;
+  }
+
+   td.hr-up {
+  
+    border-top: 2px solid #eaedee;
+  }
+
+  div.hr {
+    width: 100%;
+    height: 1em;
+    background: #2687ff;
+  }
+
+
+  th p.email, th p.phone {
+
+    font-size:.6em;font-weight:600;
+    /*text-align: */
+  }
+
+  th.contact {
+    text-align: right;
+  }
+
+  .title p, th p.email, th p.phone , p.duration{
+
+    font-style: italic;
+  }
+
+
+   .blue,.title {
+    color: #2687ff;
+  }
+
+  @import 'https://fonts.googleapis.com/css?family=PT+Sans+Caption';
+  * {
+
+    font-family: 'PT Sans Caption', sans-serif;
+  }
+
+  body {
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+
+  .work-info td {
+    padding-top: 0px;
+  }
+
+  .work-title td{
+    padding-bottom: 0px;
+  }
+
+
+  </style>
+</head>
+
+<body >
+  <div class="hr"></div>
+  <table cellspacing="0">
+    <tr>
+      <th><p class="name">{{$data['personal']['first_name']}}  {{$data['personal']['last_name']}}</p></th>
+
+      <th class="contact"><p class="phone"> {{$data['personal']['phone_no']}}</p>
+        <p class="email"> {{$data['personal']['email_address']}}</p></th>
+
+      </tr>
+    </table >
+
+    <table cellspacing="0">
+      <tr class="hr">
+        <td class="title"><p>Profile</p></td>
+        <td class="description"><p> {{$data['personal']['profile_description']}} </p></td>
+
+      </tr>
+
+
+      
+
+
+
+
+      <?php $i = 0; ?>
+      @foreach ($data['education']  as $education) 
+      <tr class="">
+        <td class="title"><p><?php echo ($i == 0) ? "Education" : "";  ?></p></td>
+        <td class="description job">
+          <p class="company">{{$education['school_name']}}</p>
+          <p class="position">{{$education['degree']}}</p>
+          <p class="description">{{$education['field_of_study']}}</p>
+
+        </td>
+
+      </tr>
+
+      <?php $i++; ?>
+      @endforeach
+
+
+
+
+
+      <tr class="hr-up">
+        <td class="title"><p>Skills</p></td>
+        <td class="description">
+          <?php 
+
+          $skills = $data['skills']['skills'];
+          $skillArray = explode(",", $skills);
+                      // var_dump($skillArray);
+          ?>
+
+          <?php foreach($skillArray as $s): ?>
+          <p>
+            <?php echo $s; ?>
+          </p>
+
+        <?php endforeach; ?>
+
+      </td>
+
+    </tr>
+
+
+
+
+
+
+
+
+
+    <?php $i = 0; ?>
+      @foreach ($data['work']  as $work) 
+      <?php
+                      // check dates
+      $start = substr($work['start_date'], 0, 4);
+      $end = substr($work['end_date'], 0, 4);
+      $start_date = ($start == "0000") ? "" : $start;
+      $end_date = ($end == "0000") ? "" : $end;
+
+      ?>
+      <tr class='<?php echo ($i != 0) ? "secondery" : "";  ?>'>
+      <?php $first =  ($i == 0) ? "Experience" : "";  ?>
+      <?php $first_class =  $first ? "hr-up" : "";  ?>
+
+        <td class="title <?php echo $first_class ?>"><p><?php echo $first ?></p></td>
+        <td class="description job <?php echo $first_class ?>">
+
+
+          <table>
+            <tr class="work-title">
+              <td>
+                <p class="company">{{$work['company_name']}}</p>
+
+              </td>
+              <td style="text-align: right;">
+
+                <p style="display: inline-block; width: 100%; height: 100%;" class="duration">{{ $start_date }} - {{ $end_date }}</p>
+              </td>
+            </tr>
+            <tr class="work-info">
+
+              <td colspan="2">
+                <p class="position">{{$work['position']}} </p>
+                <p class="description">{{$work['description']}}</p>
+              </td>
+            </tr>
+
+
+          </table>
+        </td>
+
+      </tr>
+      <?php $i++; ?>
+      @endforeach
+
+  </table>
+
+  <div class="hr"></div>
+</body>
+
+</html>

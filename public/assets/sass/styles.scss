@@ -1,0 +1,86 @@
+// REM SUPPORT
+@import "rem";
+
+/* COMPASS AWESOMENESS */
+@import "compass/css3";
+@import "fonts";
+
+
+
+
+// Import Bootstrap Compass integration
+@import "bootstrap-compass";
+// Import custom Bootstrap variables
+@import "bootstrap-variables";
+// Import Bootstrap for Sass
+@import "bootstrap";
+
+
+
+/* CUSTOM SASS */
+
+@import "variables";
+@import "mixins";
+@import "reset";
+@import "overrides";
+/*pages*/
+@import "signup";
+@import "signup-3";
+@import "signup-5";
+@import "signup-template";
+@import "additional-service";
+@import "signup-plans";
+@import "home";
+
+@import "template";
+@import "custom";
+
+/* Extra Small Devices, Phones */
+
+@media (min-width:768px) and (max-width:1024px) and (orientation: portrait) {
+
+    @import "tablet/portrait/signup";
+    @import "tablet/portrait/signup-3";
+    @import "tablet/portrait/signup-5";
+    @import "tablet/portrait/signup-plans";
+    @import "tablet/portrait/home";
+
+
+}
+@media (min-width:768px) and (max-width:1024px) and (orientation: landscape) {
+
+    @import "tablet/landscape/signup";
+    @import "tablet/landscape/signup-3";
+    @import "tablet/landscape/signup-5";
+    @import "tablet/landscape/signup-plans";
+
+}
+
+
+/*Mobile phones potrait*/
+
+@media (max-width: 767px) and (orientation: portrait) {
+    @import "mobile/portrait/signup";
+    @import "mobile/portrait/signup-3";
+    @import "mobile/portrait/signup-5";
+    @import "mobile/portrait/signup-template";
+    @import "mobile/portrait/signup-plans";
+    @import "mobile/portrait/home";
+
+
+}
+
+/*Mobile phones landscape*/
+
+@media (max-width: 767px) and (orientation: landscape) {
+    @import "mobile/landscape/signup";
+    @import "mobile/landscape/signup-3";
+    @import "mobile/landscape/signup-5";
+    @import "mobile/landscape/signup-template";
+    @import "mobile/landscape/signup-plans";
+    @import "mobile/landscape/home";
+
+}
+
+@import "mqueries";
+

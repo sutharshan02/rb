@@ -1,0 +1,278 @@
+ <ng-include src="'../rb_views/templates/css.html?112'" autoscroll></ng-include>
+<div class="loading-spinner" ng-show="loading" >
+
+
+
+  <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+  <span class="sr-only">Loading...</span>
+
+</div>
+
+<section class="setup-nav">
+  <div class="container">
+    <div class="row">
+      <ul class="clearfix">
+        <li class="active-step">
+          <p>
+            <img src ="../assets/images/st-1-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-1-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>About you</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <img src ="../assets/images/st-2-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-2-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>Profile</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <img src ="../assets/images/st-3-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-3-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>Work History</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <img src ="../assets/images/st-4-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-4-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>Education</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <img src ="../assets/images/st-5-inact.png" alt="" class="img-responsive inacitve">
+            <img src ="../assets/images/st-5-act.png" alt="" class="img-responsive acitve">
+            <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+            <span>Skills</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<form name="form1" class="input-form">
+
+
+  <!-- setup-nav -->
+  <section class="rb-inner-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+          <div class="row heading">
+            <div class="left">
+              <h1>Step 1</h1>
+            </div>
+            <div class="right">
+              <h1>About you</h1>
+            </div>
+          </div>
+          <!-- heading -->
+          <!-- <div ng-show="front_Val_failed" class="alert alert-warning"> please enter the required feilds</div> -->
+          <div ng-show="showWarning" class="alert alert-warning"> {{ error_email }}</div>
+          <!-- <div ng-show="{{form1.email_address.$valid}}" class="alert alert-danger">email issue</div> -->
+          <section ng-show="loadingError" style="padding:10px;">
+
+            <div class="server-error">Internal Server error, please refresh and try again.. <br/>
+              If this error persists, please contact the site administrator.. </div>
+            </section>
+            <!-- data loading error message -->
+
+
+
+            <div class="row form-section">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <input name="user_id" type="text" style="display: none;" ng-model="user_id"/>
+                <label>First Name *</label>
+                <input name="first_name" type="text" class="" placeholder="First Name" ng-model="resume.first_name" required>
+
+
+                <div class="alert alert-warning alert-validation"
+                ng-show="form1.first_name.$touched || front_Val_failed"
+                ng-messages="form1.first_name.$error"
+                >
+
+                <p ng-message="required"> First name is required</p>
+
+              </div>
+
+
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+              <label>Last Name *</label>
+              <input name="last_name" type="text" class="" placeholder="Last Name" ng-model="resume.last_name" required>
+
+
+              <div class="alert alert-warning alert-validation"
+              ng-show="form1.last_name.$touched || front_Val_failed"
+              ng-messages="form1.last_name.$error"
+              >
+
+              <p ng-message="required"> Last name is required</p>
+
+            </div>
+          </div>
+        </div>
+        <!-- form-section -->
+        <div class="row form-section">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <label>Email Address *</label>
+            <input name="email_address" type="email" class="" placeholder="Email Address" required ng-model="resume.email_address">
+
+            <div class="alert alert-warning alert-validation"
+            ng-show="form1.email_address.$touched || form1.email_address.$dirty || front_Val_failed"
+            ng-messages="form1.email_address.$error"
+            >
+
+            <p ng-message="required"> Email address is required</p>
+            <p ng-message="email" class="ferror">
+              <i class="delete"></i>
+              Email is invalid.
+            </p>
+          </div>
+
+          <!-- <div ng-show="form1.email_address.$dirty && form1.email_address.$invalid" style="color: red;" class="">Please enter a valid email address.</div> -->
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <label>Phone Number</label>
+          <input name="phone_no" type="text" class="" placeholder="Phone Number" required ng-model="resume.phone_no">
+
+          <div class="alert alert-warning alert-validation || front_Val_failed"
+          ng-show="form1.phone_no.$touched || form1.phone_no.$dirty"
+          ng-messages="form1.phone_no.$error"    
+          >
+
+          <p ng-message="required"> Phone number is required</p>
+          <p ng-message="pattern">
+            Phone number can only contain numbers
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- form-section -->
+    <div class="row form-section">
+      <div class="col-xs-12">
+        <label>Address</label>
+        <input name="address" type="text" class="" placeholder="Address" ng-model="resume.address">
+      </div>
+    </div>
+    <!-- form-section -->
+    <div class="row form-section">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <label>City</label>
+        <input name="city" type="text" class="" placeholder="City" ng-model="resume.city">
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <label>State</label>
+            <input name="state" type="text" class="" placeholder="State" ng-model="resume.state">
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <label>Zip Code</label>
+            <input name="zip_code" type="text" class="" ng-model="resume.zip_code" placeholder="Zip Code">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- form-section -->
+    <div class="row form-section">
+      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 pull-right">
+        <a class="next-button" href="" ng-click="submit();">Next</a>   
+      </div>
+    </div>
+    <!-- form-section -->
+  </div>
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xs-offset-1 preview-section">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 preview-wrapper">
+        <!-- <ng-view></ng-view> -->
+        <ng-include ng-if="!previewOpen" src="'../rb_views/templates/'+ preview_template_id +'/cv.html?355811'" autoscroll>
+
+      </ng-include>
+
+
+    </div>
+    <!-- preview-wrapper -->
+  </div>
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 preview-button"  ng-click="openPreview()">
+      <h6>
+        <img src ="../assets/images/preview-button.png" alt="" class="img-responsive logo-image">
+      </h6>
+    </div>
+    <!-- preview-wrapper -->
+  </div>
+</div>
+</div>
+</div>
+</section>
+<!-- rb-inner-wrapper -->
+<style ng-if="previewOpen">
+html {
+  font-size: 120%;
+}
+
+</style>
+
+<!-- Modal -->
+<div ng-if="previewOpen" id="myModal" class="modal fade in " ng-click="closePreview()" ng-style="modalOpenStyle" >
+  <div class="modal-dialog modal-lg" ng-click="$event.stopImmediatePropagation()">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+  <!--     <div class="modal-header">
+        <button type="button" ng-click="closePreview()" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div> -->
+      <div class="modal-body" style="height: 80vh; overflow-y: scroll;">
+
+        <ng-include src="'../rb_views/templates/'+ preview_template_id +'/cv.html?34'" autoscroll>
+
+      </ng-include>
+
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<style>
+
+div.modal.previewOpen {
+  display: block;
+}
+@media (max-width: 1024px) and (min-width: 768px) and (orientation: landscape) {
+
+  .rb-inner-wrapper .form-section input[type="email"] {
+    color: #000;
+    font-weight: 300;
+    font-size: 16px;
+  }
+  
+}
+.rb-inner-wrapper .form-section input[type="email"] {
+  color: #000;
+  font-weight: 300;
+  font-size: 16px;
+}
+input[type="email"] {
+  border: 1px solid #dae0e6;
+  background: transparent;
+  width: 100%;
+  padding: 10px 10px 10px;
+  height: 38px;
+  border-radius: 3px;
+}
+
+.input-form.ng-dirty input.ng-invalid {
+  background: #faebcc;
+}
+</style>

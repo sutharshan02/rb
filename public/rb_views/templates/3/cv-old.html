@@ -1,0 +1,332 @@
+
+
+  <style type="text/css">
+
+  #template1, #template1-cv {
+    transition: all 0ms ease-in-out;
+    
+  }
+#template1 {
+  /*hr*/
+  /*end hr*/
+  /*setting color*/
+  /*blue*/
+  /*end setting color*/
+  /*setting sizes*/
+  /*end setting sizes*/
+  /*work*/
+}
+#template1 td, #template1 th {
+  page-break-inside: avoid;
+}
+#template1 body {
+  padding: 0px;
+  margin: 0px;
+  /*for dev*/
+  /*width: 730px; */
+}
+#template1 * {
+  font-family: sans-serif;
+}
+#template1 tr.hr td, #template1 tr.hr th {
+  border-bottom: 1px solid #aaa;
+}
+#template1 tr.hr-up > td {
+  border-top: 1px solid #aaa;
+}
+#template1 div.hr {
+  width: 100%;
+  height: 1em;
+  background: #034976;
+}
+#template1 tr.hr td {
+  padding-bottom: 30px;
+}
+#template1 tr.hr + tr > td {
+  /*border:1px solid red;*/
+  padding-top: 30px;
+}
+#template1 table.main > tbody > tr > td
+ {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  /*border: 1px solid red;*/
+}
+#template1 table.main > tbody > tr.secondery > td {
+  /*border: 2px solid green;*/
+  padding-top: 0px;
+}
+#template1 * {
+  color: #444;
+}
+#template1 p.name, #template1 th.contact p {
+  color: #034976;
+}
+#template1 p {
+  font-size: 0.75rem;
+  line-height: 1.0625rem;
+  margin-bottom: 0px;
+}
+#template1 p.name {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+#template1 th.contact p, #template1 td.title p {
+  font-size: 0.9375rem;
+  font-weight: normal;
+  font-style: normal;
+  font-family: sans-serif;
+}
+#template1 tr {
+  vertical-align: top;
+}
+#template1 p {
+  margin-top: 0px;
+}
+#template1 table.main tr td.title {
+  width: 20%;
+}
+#template1 p.name {
+  text-align: left;
+}
+#template1 th.contact p {
+  text-align: right;
+}
+#template1 table.main {
+  padding: 70px 90px;
+  /*padding-bottom: 20px;*/
+  width: 100%;
+}
+#template1 table.main:first-of-type {
+  padding-bottom: 0px;
+}
+#template1 table.main:last-of-type {
+  padding-top: 0px;
+}
+#template1 .i {
+  font-style: normal;
+  font-family: sans-serif;
+}
+#template1 .work-title .company {
+  font-weight: bold;
+}
+#template1 .duration {
+  font-weight: bold;
+}
+#template1 .work-info .position {
+  font-weight: bold;
+  color: #888;
+}
+#template1 .education {
+  font-style: normal;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+#template1 .education .position, #template1 .education .description {
+  color: #888;
+}
+#template1 .black, #template1 .black * {
+  color: #444;
+  font-family: sans-serif;
+}
+#template1 .gray, #template1 .gray * {
+  color: #777;
+  font-family: sans-serif;
+  font-weight: 200;
+}
+#template1 .blue, #template1 .blue * {
+  color: #2687ff;
+  font-family: sans-serif;
+}
+#template1 .name * {
+  font-weight: 200;
+}
+#template1 .name .blue, #template1 .name .blue * {
+  font-weight: 600;
+}
+#template1 td.title * {
+  font-weight: 400;
+  color: #2687ff;
+  font-style: normal;
+  text-transform: uppercase;
+}
+#template1 .education td.description p {
+  font-weight: 200;
+}
+
+
+
+
+
+
+
+  /*test*/
+  .rb-inner-wrapper > .container > .row:first-of-type {
+    /*border:  1px solid red;*/
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.rb-inner-wrapper > .container > .row:first-of-type > div {
+    /*border: 1px dashed blue;*/
+/*     flex: 1; */
+}
+
+.rb-inner-wrapper > .container > .row:first-of-type > div:nth-of-type(2) .preview-wrapper {
+    /*border: 1px dashed red;*/
+/*     flex: 1; */
+    height: 350px;
+    overflow: scroll;
+}
+
+#template1 .hr {
+margin-bottom: 20px;
+}
+
+/*top padding*/
+
+#template1 p.name {
+    padding-top: 18px;
+
+}
+#template1 table.main > tbody > tr > td {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+  </style>
+<span id="template1">  <div class="" sytle="width: 100%;"></div>
+  <table cellspacing="0" class="main">
+    <tr>
+      <th colspan="2" style="height: 40px;">
+        <p class="name" style="text-transform: uppercase;"><span class="black">{{resume.first_name || "First Name"}}<span>  <span class="blue">{{resume.last_name || "Last Name"}}</span></p>
+      </th>
+    </tr>
+
+
+    <tr>
+      <th  colspan="2" style="text-align: left;">
+        <p style="text-align: left;">
+         
+          <span class="gray">{{resume.address}} - {{resume.city}} - {{resume.state}} {{resume.zip_code}} </span>
+
+        </p>
+      </th>
+
+    </tr>
+    <tr class="hr">
+      <th  colspan="2" style="text-align: left; height: 25px;">
+        <p style="text-align: left;">
+          <span class="black">Cell </span>
+          <span class="gray"> {{resume.phone_no || "Phone number"}} |</span>
+          <span class="black"> Email </span>
+          <span class="gray"> {{resume.email_address || "Address"}}</span>
+        </p>
+      </th>
+
+    </tr>
+
+
+
+  </table >
+
+  <table cellspacing="0" class="main">
+    <tr class="">
+      <td class="title"><p>Profile</p></td>
+      <td class="description"><p>{{resume.profile_description || "profile description"}} </p></td>
+
+    </tr>
+
+
+
+
+   
+    <tr ng-repeat="school in education" class="education ">
+      <td class="title">
+        <p ng-if="$index == 0">Education</p></p>
+      </td>
+      <td class="description job">
+        <p class="company">{{school.school_name}}</p>
+        <p class="position">{{school.degree}}</p>
+        <p class="description">{{school.field_of_study}}</p>
+
+      </td>
+
+    </tr>
+ 
+
+
+
+
+
+    <tr class="hr-up">
+      <td class="title"><p>Skills</p></td>
+      <td class="description">
+      
+       
+        <p ng-repeat="skill in skillsList">{{skill}} </p>
+  
+
+    </td>
+
+  </tr>
+
+ 
+
+
+  <tr class='' ng-repeat="job in work">
+    <td class="title">
+<p ng-if="$index == 0">Experience</p>
+    </td>
+    <td class="description job">
+
+
+      <table>
+        <tr class="work-title">
+          <td>
+            <p class="company i">{{job.company_name || "Company name"}}</p>
+
+          </td>
+          <td style="text-align: right;">
+
+            <p style="display: inline-block; width: 100%; height: 100%;" class="duration i">{{ job.start_year_text.name  || "start year"}} - {{job.end_year_text.name ||  " "}} <span ng-show="job.is_present">to Date</span></p>
+          </td>
+        </tr>
+        <tr class="work-info">
+
+          <td colspan="2">
+            <p class="position i">{{job.position || "Position"}} </p>
+            <p class="description">{{job.description || "Description"}}</p>
+
+          </td>
+        </tr>
+
+
+      </table>
+    </td>
+
+  </tr>
+
+
+
+<tr class="">
+      <td  colspan="2" style="text-align: left; height: 10px;">
+        <p style="text-align: center; display: flex; justify-content: space-between;">
+          <span class="block gray"> {{resume.address}} - {{resume.city}} - {{resume.state}} {{resume.zip_code}}  | </span> 
+          
+
+          <span class="block black">Cell </span>
+          <span class="block gray"> {{resume.phone_no || "Phone number"}} |</span>
+          
+          <span class="block black"> Email </span>
+          <span class="block gray"> {{resume.email_address || "Address"}}</span>
+        </p>
+      </td>
+
+    </tr>
+
+
+
+</table>
+
+</span>

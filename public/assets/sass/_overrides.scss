@@ -1,0 +1,23 @@
+.navbar-brand {
+	float       : left;
+	padding     : 15px 0px;
+	font-size   : 18px;
+	line-height : 20px;
+	height      : auto;
+}
+
+.navbar-default {
+	background-color : transparent; 
+	border-color     : transparent;
+}
+.navbar {
+    
+	min-height    : 50px;
+	margin-bottom : 9px;
+	border        : none;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color            : $orange;
+	background-color : transparent;
+}

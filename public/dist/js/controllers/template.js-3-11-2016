@@ -1,0 +1,11 @@
+app.controller('templateController', function($scope, $localStorage, $sessionStorage, $http, config, $location,cvData, env) {
+
+	if(env.ifDev()){
+	console.log('template controller loaded');
+
+	}
+	$scope.start = function(template_id) {
+		$sessionStorage.template_id = template_id;
+		$location.path("/");
+	}	
+});

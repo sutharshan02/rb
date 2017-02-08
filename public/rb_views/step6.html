@@ -1,0 +1,114 @@
+<style>
+@keyframes example {
+    0% {
+  
+      transform: scale(0) rotate(45deg);
+    }
+
+
+    70% {
+ 
+      transform: scale(1) rotate(-4deg);
+    }
+    85% {
+   
+      transform: scale(1) rotate(2deg);
+    }
+    100% {
+
+      transform: scale(1) rotate(0deg);
+    }
+}
+
+.verify-alert {
+  /*border: 1px solid red;*/
+  /*transform-origin: top;*/
+  animation: 300ms example;
+}
+</style>
+<div class="loading-spinner" ng-show="loading" >
+
+<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+
+</div>
+    <section class="setup-nav">
+      <div class="container">
+        <div class="row">
+          <ul class="clearfix">
+            <li class="completed-section">
+              <p>
+                <img src ="../assets/images/st-1-inact.png" alt="" class="img-responsive inacitve">
+                <img src ="../assets/images/st-1-act.png" alt="" class="img-responsive acitve">
+                <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+                <span>About you</span>
+              </p>
+            </li>
+            <li class="completed-section">
+              <p>
+                <img src ="../assets/images/st-2-inact.png" alt="" class="img-responsive inacitve">
+                <img src ="../assets/images/st-2-act.png" alt="" class="img-responsive acitve">
+                <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+                <span>Profile</span>
+              </p>
+            </li>
+            <li class="completed-section">
+              <p>
+                <img src ="../assets/images/st-3-inact.png" alt="" class="img-responsive inacitve">
+                <img src ="../assets/images/st-3-act.png" alt="" class="img-responsive acitve">
+                <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+                <span>Work History</span>
+              </p>
+            </li>
+            <li class="completed-section">
+              <p>
+                <img src ="../assets/images/st-4-inact.png" alt="" class="img-responsive inacitve">
+                <img src ="../assets/images/st-4-act.png" alt="" class="img-responsive acitve">
+                <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+                <span>Education</span>
+              </p>
+            </li>
+            <li class="active-step">
+              <p >
+                <img src ="../assets/images/st-5-inact.png" alt="" class="img-responsive inacitve">
+                <img src ="../assets/images/st-5-act.png" alt="" class="img-responsive acitve">
+                <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+                <span>Skills</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- setup-nav -->
+    <section class="rb-template-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-10 col-md-6 col-lg-6 rb-template-inner">
+            <div class="row">
+              <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 rb-template-inner-box">
+                  <div ng-show="showWarning" style="color: #ff4422">Sorry You can't save your resume. Please verify your account from the email already sent to you !</div>
+                <img src ="../assets/images/rb-signup-template-name-1.png" alt="" class="img-responsive">
+                <h1>Resume Created</h1>
+                <p>Enter a name for this template</p>
+                <div ng-if="checkMail" class="verify-alert alert alert-info" style="margin-top: 20px; margin-bottom: 0px;">
+                  <p>Please check you inbox and verify your account by clicking on the verify link</p>
+                </div>
+                <input style="margin-top:20px" type="text" ng-model="resume.resume_name" name="" placeholder="Please type...">
+                <div ng-show="name_empty" class="alert alert-warning" style="margin-top: 15px;">please enter a name</div>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <a class="back-button hover-shadow" href="#/template">Back</a>   
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <a class="save-button hover-shadow" ng-click="save()" >Save</a>   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- rb-template-wrapper -->
+   

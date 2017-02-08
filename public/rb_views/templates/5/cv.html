@@ -1,0 +1,195 @@
+
+<style>
+.template-executive .user-name {
+  text-transform: uppercase;
+}
+
+.grayBigHeader {
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+.font-os {
+    font-family: 'Open Sans', sans-serif;
+}
+
+</style>
+
+<style>
+.template-executive .user-name {
+  text-transform: uppercase;
+}
+
+.grayBigHeader {
+  font-family: 'Open Sans', sans-serif !important;
+
+}
+
+.font-os {
+  font-family: 'Open Sans', sans-serif !important;
+  
+}
+
+.right-contentpanel , .right-contentpanel * {
+    font-family: 'Lora', serif ;
+}
+
+.right-contentpanel {
+  color: #1f1e1e;
+}
+
+
+.color-757474 {
+  color: #757474 !important;
+}
+
+.color-811111 {
+    color: #811111 !important;
+}
+
+.color-1f1e1e {
+    color: #1f1e1e !important;
+}
+.color-1f1e1e {
+    color: #1f1e1e !important;
+}
+
+
+</style>
+
+<div id="template1" class="container black template-executive">
+  <div class="certificate">
+    <div class="OneContenttype">
+      <div class="left-headerpanel"></div>
+      <div class="right-contentpanel">
+        <h1  class="user-name font-os">{{resume.first_name || "First Name"}} {{resume.last_name || "Last Name"}}</h1>
+        <div class="brownline" style="padding-top: 0;">{{resume.address}}, {{resume.city}}, {{resume.state}} {{resume.zip_code}}  
+          <br />    {{resume.email_address || "Address"}}
+          <br />  {{resume.phone_no || "Phone number"}}    
+          </div>
+        </div>
+      </div>
+      <div class="OneContenttype">
+        <div class="left-headerpanel">
+
+          <div class="grayBigHeader bottom" style="font-family: 'Open Sans', sans-serif;"><br /><br />Profile</div>
+        </div>
+        <div class="right-contentpanel">
+          <div class="inBoxTo">
+            <div class="html text-justify" ng-bind-html="resume.profile_description"></div>
+          </div>
+        </div>
+      </div>
+      <div class="OneContenttype">
+        <div class="left-headerpanel">
+          <div class="grayBigHeader">Education</div>
+        </div>
+        <div class="right-contentpanel">
+          <div class="2">
+            <any ng-repeat="school in education" ng-if="education.length>0">
+              <div class="brownSubHeader">{{school.school_name}}, {{school.location}} 
+                <div  class="roghtYear">
+                <any ng-if="school.start_year_text != null">
+                {{school.start_year_text.name || school.start_year}}
+                </any>
+                 - <any ng-if="school.in_progress">
+                  Present
+                </any>
+                <any ng-if="!school.in_progress && school.graduation_year">
+                  {{school.graduation_year_text.name || school.graduation_year || ""}} 
+                </any></div>
+              </div>
+              <div>
+                <div class="color-gray"> {{school.degree}}, <span ng-if="school.gpa">GPA: {{school.gpa}}</span></div>
+                {{school.field_of_study}}
+              </div>
+              <div class="html" ng-bind-html="school.description"></div>
+              <div class="clearfix"></div><br />
+            </any>
+            <div ng-if="education.length==0||education.length===undefined"><br /><br /><br /><br /></div>
+          </div>
+
+        </div>
+      </div>
+      <div class="OneContenttype">
+        <div class="left-headerpanel">
+          <div class="grayBigHeader grayBigHeader-skills">Skills</div>
+        </div>
+        <div class="right-contentpanel">
+          <div class="inBoxTo2">
+            <div class="row">
+              <any ng-repeat="skill in skillsList">
+                <div class="col-sm-4">
+
+
+                  <p>{{skill}}</p>
+                </div>
+              </any>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="OneContenttype">
+        <div class="left-headerpanel">
+          <br /> <br /> <br /> <br /> <br />
+          <div class="grayBigHeader">Experience</div>
+        </div>
+        <div class="right-contentpanel">
+          <div class="inBoxTo2">
+            <any ng-repeat="job in work">
+              <div class="row">
+                <div class="col-xs-8">
+                  <p>
+                    <b class="color-811111">{{job.company_name || "Company name"}}</b><br />
+                    {{job.position || "Position"}}
+                  </p>
+                  <p>
+
+                  </p>
+                </div>
+                <div class="col-xs-4">
+                  <b  class="Fright">
+
+                  <any ng-if="job.start_year_text != null && job.start_year_text != '0000'">
+                   {{job.start_year_text.name || job.start_year }} -
+                  </any>
+
+                    <any ng-if="job.is_present">
+                      Present
+                    </any>
+
+                    <any ng-if="!job.is_present && job.end_year && job.end_year_text != null && job.end_year_text != '0000'">
+                      {{job.end_year_text.name || job.end_year || ""}} 
+                    </any>
+
+                    </b>
+                  </div>
+                </div>
+
+                <div ng-if="job.description">
+                  <div class="html" ng-bind-html="job.description"> <br/> <br/></div>
+                </div>
+                <div ng-if="job.responsibilities">
+                  <div class="html" ng-bind-html="job.responsibilities"></div>
+                </div>
+                <br />
+
+              </any>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+<style>
+.grayBigHeader.grayBigHeader-skills {
+  position: absolute;
+  top: 19px;
+}
+
+</style>

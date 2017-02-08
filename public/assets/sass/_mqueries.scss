@@ -1,0 +1,158 @@
+/*Media*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait)  { 
+
+	.logged-navigation li a {
+	    padding: 11px 6px !important;
+	}
+
+	.logged-navigation .nav-user-details {
+		padding     : 8px 10px;
+		border-left : 1px solid #dbe0e0;
+		margin-top  : -10px;
+	}
+
+	
+	.additional-services-wrapper .additional-services-box {
+	    margin-bottom: 30px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape)   { 
+	.home-section-4 .right img {
+	    display: inline-block;
+	    margin-right: 8%;
+	    vertical-align: top;
+	}
+
+	
+
+}
+
+
+
+@media (max-width: 767px) and (orientation: portrait) {
+	.rb-inner-wrapper .form-section .back-button {
+		margin-top : 20px;
+	}	
+
+	.rb-inner-wrapper .form-section .next-button {
+		margin-top       : 20px !important;
+		background-color : transparent !important;
+	}
+
+	.additional-services-wrapper .additional-services-box-row {
+		margin-left  : 0px;
+		margin-right : 0px;
+		margin-top   : 20px;
+	}
+
+	.additional-services-wrapper .additional-services-box {
+	    margin-bottom: 30px;
+	}
+
+	.bottom-section .next-button {
+
+		margin-top : 15px; 
+		margin     : 15px;
+	}
+
+	.bottom-section .back-button {
+
+		margin-top    : 20px;
+		margin-bottom : 20px;
+	    
+	}
+
+}
+
+
+
+@media (max-width: 767px) and (orientation: landscape) {
+
+	.additional-services-wrapper .additional-services-box-row {
+		margin-left  : 0px;
+		margin-right : 0px;
+		margin-top   : 20px;
+	}
+
+	.additional-services-wrapper .additional-services-box {
+	    margin-bottom: 30px;
+	}
+
+	.bottom-section .next-button {
+
+	    margin-top: 15px; 
+	    margin: 15px;
+	}
+
+	.bottom-section .back-button {
+
+		margin-top    : 20px;
+		margin-bottom : 20px;
+	    
+	}
+
+}
+
+
+@media (min-width : 1824px) {
+	.additional-services-wrapper{
+		background     :$gary-10 ;
+		padding-top    :6%;
+		padding-bottom :6%;
+	}
+}
+
+
+
+/*nav bar collpase in ipad*/
+
+
+@media (min-width:768px) and (max-width:1024px) and (orientation: portrait)  {
+  .navbar-header {
+    float: none;
+  }
+
+  .navbar-left, .navbar-right {
+    float: none !important;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+
+  .navbar-nav {
+    float: none!important;
+    margin-top: 7.5px;
+  }
+
+  .navbar-nav>li {
+    float: none;
+  }
+
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .collapse.in {
+    display: block !important;
+  }
+}
+

@@ -1,0 +1,110 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <title></title>
+
+  <style type="text/css">
+
+  table{width:100%}table th{text-align:left}table td.title{width:20%}table td.description{width:80%}td{vertical-align:top}.name{font-size:1.7em}td,th{padding:.8em 0}.title p{font-size:.68em;font-weight:600}.description p{font-size:.563em;font-weight:100}.description.job p{margin:.17em 0}p.company{font-size:.6em;font-weight:600}p.duration,p.position{font-size:.58em;font-weight:600}p.position{font-style:italic}.description.job p.description{margin-top:.61em}
+
+  table {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  tr.secondery td {
+    padding-top: 0em;
+  }
+
+
+  .title p, th p.email, th p.phone , p.duration{
+
+    font-style: italic;
+  }
+
+
+  body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px; 
+  }
+  </style>
+</head>
+
+<body >
+  <table>
+    <tr>
+      <th colspan="2"><p class="name">{{$data['personal']['first_name']}}  {{$data['personal']['last_name']}}</p></th>
+      
+    </tr>
+    
+    <tr>
+      <td class="title"><p>Profile</p></td>
+      <td class="description"><p> {{$data['personal']['profile_description']}} </p></td>
+
+    </tr>
+    
+    <tr>
+      <td class="title"><p>Skills</p></td>
+      <td class="description">
+        <?php 
+
+        $skills = $data['skills']['skills'];
+        $skillArray = explode(",", $skills);
+                      // var_dump($skillArray);
+        ?>
+
+        <?php foreach($skillArray as $s): ?>
+        <p>
+          <?php echo $s; ?>
+        </p>
+
+      <?php endforeach; ?>
+
+    </td>
+
+  </tr>
+  <?php $i = 0; ?>
+  @foreach ($data['work']  as $work) 
+  <?php
+                      // check dates
+  $start = substr($work['start_date'], 0, 4);
+  $end = substr($work['end_date'], 0, 4);
+  $start_date = ($start == "0000") ? "" : $start;
+  $end_date = ($end == "0000") ? "" : $end;
+
+  ?>
+  <tr class='<?php echo ($i != 0) ? "secondery" : "";  ?>'>
+    <td class="title"><p><?php echo ($i == 0) ? "Experience" : "";  ?></p></td>
+    <td class="description job">
+      <p class="company">{{$work['company_name']}}</p>
+      <p class="position">{{$work['position']}} </p>
+      <p class="description">{{$work['description']}}</p>
+      <p class="duration">{{ $start_date }} - {{ $end_date }}</p>
+
+    </td>
+
+  </tr>
+  <?php $i++; ?>
+  @endforeach
+
+
+  <?php $i = 0; ?>
+  @foreach ($data['education']  as $education) 
+  <tr>
+    <td class="title"><p><?php echo ($i == 0) ? "Education" : "";  ?></p></td>
+    <td class="description job">
+      <p class="company">{{$education['school_name']}}</p>
+      <p class="position">{{$education['degree']}}</p>
+      <p class="description">{{$education['field_of_study']}}</p>
+
+    </td>
+
+  </tr>
+
+  <?php $i++; ?>
+  @endforeach
+</table>
+</body>
+
+</html>

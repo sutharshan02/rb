@@ -1,0 +1,149 @@
+
+    <section class="setup-nav">
+      <div class="container">
+        <div class="row">
+          <ul class="clearfix">
+            <li class="completed-section">
+              <p>
+                <img src ="../assets/images/st-1-inact.png" alt="" class="img-responsive inacitve">
+                <img src ="../assets/images/st-1-act.png" alt="" class="img-responsive acitve">
+                <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+                <span>About you</span>
+              </p>
+            </li>
+            <li class="completed-section">
+              <p>
+                <img src ="../assets/images/st-2-inact.png" alt="" class="img-responsive inacitve">
+                <img src ="../assets/images/st-2-act.png" alt="" class="img-responsive acitve">
+                <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+                <span>Profile</span>
+              </p>
+            </li>
+            <li class="completed-section">
+              <p>
+                <img src ="../assets/images/st-3-inact.png" alt="" class="img-responsive inacitve">
+                <img src ="../assets/images/st-3-act.png" alt="" class="img-responsive acitve">
+                <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+                <span>Work History</span>
+              </p>
+            </li>
+            <li class="completed-section">
+              <p>
+                <img src ="../assets/images/st-4-inact.png" alt="" class="img-responsive inacitve">
+                <img src ="../assets/images/st-4-act.png" alt="" class="img-responsive acitve">
+                <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+                <span>Education</span>
+              </p>
+            </li>
+            <li class="active-step">
+              <p >
+                <img src ="../assets/images/st-5-inact.png" alt="" class="img-responsive inacitve">
+                <img src ="../assets/images/st-5-act.png" alt="" class="img-responsive acitve">
+                <img src ="../assets/images/done.png" alt="" class="img-responsive complte">
+                <span>Skills</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- setup-nav -->
+    <section class="rb-inner-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+            <div class="row heading">
+              <div class="left">
+                <h1>Step 5</h1>
+              </div>
+              <div class="right">
+                <h1>Skills</h1>
+              </div>
+            </div>
+            <!-- heading -->
+            <div class="row">
+              <div class="col-xs-12 skills-box">
+                <div class="row form-section">
+                  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                    <label>Company Name</label>
+                    <!-- <max-autocomplete items="one" ></max-autocomplete> -->
+                    <max-autocomplete class=".max-autocomplete" items="setSkills" currentKey="inputValue"></max-autocomplete>
+
+                    
+                    <br/>
+                    {{allSkills}}
+                    <input type='text' id="skills" ng-keydown="autolist($event)" ng-keyup="keyUp($event)" ng-model="searchKey" autocomplete="off">
+                   <ul class="autocomplete-container" ng-if="setSkills.length">
+
+                      <li ng-click="selectItem(this)" enter ng-repeat="item in setSkills">{{item}}</li>
+
+
+                   </ul>
+
+                 
+                    <!-- <input data-autocomplete="http://localhost/resume_builder/public/userskill" /> -->
+                  </div>
+                  <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 add-button-wrapper">
+                    <a class="skill-add-button" href="" ng-click="testIt()"> <img src ="../assets/images/add-button.png" alt="" class=""> ADD</a>
+                  </div>
+                </div>
+                <!-- form-section -->
+                <div class="row skill-section">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p ng-repeat="skill in skills"><span>{{skill}}</span> <img src="../assets/images/skill-close.png"></p>
+              
+                  </div>
+
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class ="box-border">
+                    </div>
+                  </div>
+                </div>
+                <!-- form-section --> 
+              </div>
+            </div>
+            <!-- form-section -->
+            <div class="row form-section">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <a class="back-button" href="#/step4">Back</a>   
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <a class="next-button" href="#/step6">Finish</a>   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- form-section -->
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xs-offset-1 preview-section">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 preview-wrapper">
+                <img src ="../assets/images/doc-1.png" alt="" class="img-responsive logo-image">
+              </div>
+              <!-- preview-wrapper -->
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 preview-button">
+                <h6>
+                  <img src ="../assets/images/preview-button.png" alt="" class="img-responsive logo-image">
+                </h6>
+              </div>
+              <!-- preview-wrapper -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- rb-inner-wrapper -->
+    
+    <script type="text/javascript">
+
+    // $("#skills").autocomplete();
+
+
+
+
+    </script>
